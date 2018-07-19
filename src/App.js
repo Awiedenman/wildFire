@@ -40,5 +40,5 @@ export const mapDispatchToProps = dispatch => ({
   storeCurrentFireData = (currentFireData) => dispatch(storeCurrentFireData(currentFireData))
 })
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 
