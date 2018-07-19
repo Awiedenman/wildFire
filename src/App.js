@@ -24,7 +24,6 @@ class App extends Component {
     console.log(result)
     console.log(currentFireData)
     return currentFireData
-
   }
 
   render() {
@@ -37,4 +36,9 @@ class App extends Component {
   }
 }
 
-export default App;
+export const mapDispatchToProps = dispatch => ({
+  storeCurrentFireData = (currentFireData) => dispatch(storeCurrentFireData(currentFireData))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+
