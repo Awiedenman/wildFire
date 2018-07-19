@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
+import { storeCurrentFireData } from './actions';
 var convert = require('xml-js');
 
 
@@ -37,8 +38,8 @@ class App extends Component {
 }
 
 export const mapDispatchToProps = dispatch => ({
-  storeCurrentFireData = (currentFireData) => dispatch(storeCurrentFireData(currentFireData))
+  storeCurrentFireData: (currentFireData) => dispatch(storeCurrentFireData(currentFireData))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
 
