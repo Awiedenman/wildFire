@@ -1,29 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
-// import { connect } from 'react-redux';
-var convert = require('xml-js');
+import { connect } from 'react-redux';
+import { storeCurrentFireData } from './actions';
+import { currentFireRequest } from './heplers/apiCalls';
 
 
 class App extends Component {
 
-  componentDidMount(){
-    this.currentFireRequest();
-
-  }
-
-  currentFireRequest = async () => {
-    const url = 'https://cors-anywhere.herokuapp.com/https://www.geomac.gov/DynContent/georss/nifc_large_firesW3C.xml';
-    const xmlResponse = await fetch(url);
-    // consorle.log(xmlData)
-    const currentFireData = await xmlResponse.text();
-    var result = convert.xml2json(
-      currentFireData, {
-        compact: true,
-        spaces: 2
-      });
-    console.log(result)
+  async componentDidMount(){
+    const currentFireData = await currentFireRequest();
     console.log(currentFireData)
-    return currentFireData
+    this.props.storeCurrentFireData(currentFireData)
   }
 
   render() {
@@ -37,8 +24,8 @@ class App extends Component {
 }
 
 export const mapDispatchToProps = dispatch => ({
-  storeCurrentFireData = (currentFireData) => dispatch(storeCurrentFireData(currentFireData))
+  storeCurrentFireData: (currentFireData) => dispatch(storeCurrentFireData(currentFireData))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
 
