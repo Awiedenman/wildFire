@@ -3,7 +3,7 @@ import { apiKey } from '../../api-key';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 
 
-export class CurrentFireMapContainer extends Component {
+export class CurrentFires extends Component {
   render() {
     const location = {
       lat: 39,
@@ -20,10 +20,11 @@ export class CurrentFireMapContainer extends Component {
         style={style}
         google={this.props.google} 
         initialcenter={location}
+        center={location}
+        zoom= {5}
       >
       <Marker 
         position={location}
-        zoom= {7}
         name={'Current location'} /> 
         <InfoWindow onClose={this.onInfoWindowClose}>
             <div>
@@ -35,4 +36,4 @@ export class CurrentFireMapContainer extends Component {
   }
 }
 
-export default GoogleApiWrapper({ apiKey: apiKey })(CurrentFireMapContainer);
+export default GoogleApiWrapper({ apiKey: apiKey })(CurrentFires);
