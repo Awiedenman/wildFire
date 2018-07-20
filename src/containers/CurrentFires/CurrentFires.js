@@ -5,9 +5,9 @@ import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 
 export class CurrentFires extends Component {
   render() {
-    const location = {
+    const initialCenter = {
       lat: 39,
-      lng: -104.9
+      lng: -96.9
     }
     
     const style = {
@@ -19,12 +19,12 @@ export class CurrentFires extends Component {
       <Map 
         style={style}
         google={this.props.google} 
-        initialcenter={location}
-        center={location}
+        initialCenter={initialCenter}
+        center={initialCenter}
         zoom= {5}
       >
       <Marker 
-        position={location}
+        position={initialCenter}
         name={'Current location'} /> 
         <InfoWindow onClose={this.onInfoWindowClose}>
             <div>
