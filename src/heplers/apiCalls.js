@@ -10,8 +10,8 @@ var convert = require('xml-js');
          compact: true,
          spaces: 2
         });
-        // console.log(currentFireDataXml)
-        // console.log(jsonData)
+        console.log(currentFireDataXml)
+        console.log(jsonData)
         return jsonData
       } catch(error){
         throw Error('Couldn\'t retreive the current fire')

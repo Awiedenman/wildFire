@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { storeCurrentFireData } from './actions';
-import { currentFireRequest } from './heplers/apiCalls';
+import { storeCurrentFireData } from '../../actions';
+import { currentFireRequest } from '../../heplers/apiCalls';
 
 
-class App extends Component {
 
-  async componentDidMount(){
+class CurrentFires extends Component {
+
+  async componentDidMount() {
     const currentFireData = await currentFireRequest();
     console.log(currentFireData)
     this.props.storeCurrentFireData(currentFireData)
@@ -15,17 +15,14 @@ class App extends Component {
 
   render() {
     return (
-      <main>
-        <header>
-        </header>
-      </main>
-    );
+      <div>
+        {/* <Map/> */}
+      </div>
+    )
   }
 }
-
 export const mapDispatchToProps = dispatch => ({
   storeCurrentFireData: (currentFireData) => dispatch(storeCurrentFireData(currentFireData))
 })
 
-export default connect(null, mapDispatchToProps)(App);
-
+export default connect(null, mapDispatchToProps)(CurrentFires)
