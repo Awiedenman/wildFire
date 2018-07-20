@@ -1,20 +1,32 @@
-import React, { Component } from 'react';
-import './App.css';
-import { Route } from 'react-router-dom';
-import CurrentFires from '../../containers/CurrentFires/CurrentFires';
+import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import { storeCurrentFireData } from '../../actions';
+import { currentFireRequest, currentFireArticlesRequest } from '../../heplers/apiCalls';
+import { CurrentFireMapContainer } from '../../containers/CurrentFireMapContainer/CurrentFireMapContainer';
 
 
 
-class App extends Component {
+class CurrentFires extends Component {
+
+  async componentDidMount() {
+    const currentFireData = await currentFireRequest();
+    // console.log(currentFireData)
+    this.props.storeCurrentFireData(currentFireData)
+
+    const currentFireArticlesData = await currentFireArticlesRequest();
+    // console.log(currentFireArticlesData)
+  }
 
   render() {
     return (
       <div>
-        <Route exact path="/" component={CurrentFires} />
+        <CurrentFireMapContainer/>
       </div>
-    );
+    )
   }
 }
+export const mapDispatchToProps = dispatch => ({
+  storeCurrentFireData: (currentFireData) => dispatch(storeCurrentFireData(currentFireData))
+})
 
-export default App;
-
+export default connect(null, mapDispatchToProps)(CurrentFires)

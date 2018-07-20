@@ -1,28 +1,38 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux';
-import { storeCurrentFireData } from '../../actions';
-import { currentFireRequest } from '../../heplers/apiCalls';
+import React, { Component } from 'react';
+import { apiKey } from '../../api-key';
+import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 
 
-
-class CurrentFires extends Component {
-
-  async componentDidMount() {
-    const currentFireData = await currentFireRequest();
-    console.log(currentFireData)
-    this.props.storeCurrentFireData(currentFireData)
-  }
-
+export class CurrentFireMapContainer extends Component {
   render() {
-    return (
-      <div>
-        {/* <Map/> */}
-      </div>
-    )
+    const location = {
+      lat: 39,
+      lng: -104.9
+    }
+    
+    const style = {
+      width: '100%',
+      height: '100%'
+    }
+    
+    return(
+      <Map 
+        style={style}
+        google={this.props.google} 
+        initialcenter={location}
+      >
+      <Marker 
+        position={location}
+        zoom= {7}
+        name={'Current location'} /> 
+        <InfoWindow onClose={this.onInfoWindowClose}>
+            <div>
+              {/* <h1>{this.state.selectedPlace.name}</h1> */}
+            </div>
+        </InfoWindow>
+      </Map>
+   )
   }
 }
-export const mapDispatchToProps = dispatch => ({
-  storeCurrentFireData: (currentFireData) => dispatch(storeCurrentFireData(currentFireData))
-})
 
-export default connect(null, mapDispatchToProps)(CurrentFires)
+export default GoogleApiWrapper({ apiKey: apiKey })(CurrentFireMapContainer);
