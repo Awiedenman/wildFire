@@ -12,11 +12,14 @@ class App extends Component {
     // console.log('load');
     
     const currentFireData = await currentFireRequest();
-    // console.log(currentFireData)
-    this.props.storeCurrentFireData(currentFireData)
+    const parsedFiresData = JSON.parse(currentFireData)
+    console.log(parsedFiresData)
+    this.props.storeCurrentFireData(parsedFiresData)
 
     const currentFireArticlesData = await currentFireArticlesRequest();
-    // console.log(currentFireArticlesData)
+    const parsedFireArticleData = JSON.parse(currentFireArticlesData)
+
+    console.log(parsedFireArticleData)
   }
 
   render() {

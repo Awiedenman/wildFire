@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import { apiKey } from '../../api-key';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 
 
 export class CurrentFires extends Component {
-  render() {
+  
+  currentFireMarkers = this.props.currentFires.rss.channel.item.map(fire => {
+      console.log(fire)
+    })
+    
+    render() {
+      console.log('fires', this.props.currentFires);
     const initialCenter = {
       lat: 39,
       lng: -96.9
@@ -24,9 +30,9 @@ export class CurrentFires extends Component {
         center={initialCenter}
         zoom= {5}
       >
-      <Marker 
-        position={initialCenter}
-        name={'Current location'} /> 
+        <Marker 
+          position={initialCenter}
+          name={'Current location'} /> 
         <InfoWindow onClose={this.onInfoWindowClose}>
             <div>
               {/* <h1>{this.state.selectedPlace.name}</h1> */}
@@ -37,5 +43,11 @@ export class CurrentFires extends Component {
   }
 }
 
-export default GoogleApiWrapper({ apiKey: apiKey })(CurrentFires);
-// export default connect(mapStateToProps)(CurrentFires);
+const mapStateToProps = (state) => ({
+  currentFires: state.currentFires
+})
+
+const googleWrapper = GoogleApiWrapper({ apiKey: apiKey })(CurrentFires)
+
+export default connect(mapStateToProps)(googleWrapper);
+
