@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { apiKey } from '../../api-key';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+// import { connect } from 'react-redux';
 
 
-export class CurrentFireMapContainer extends Component {
+export class CurrentFires extends Component {
   render() {
-    const location = {
+    const initialCenter = {
       lat: 39,
-      lng: -104.9
+      lng: -96.9
     }
     
     const style = {
@@ -19,11 +20,12 @@ export class CurrentFireMapContainer extends Component {
       <Map 
         style={style}
         google={this.props.google} 
-        initialcenter={location}
+        initialCenter={initialCenter}
+        center={initialCenter}
+        zoom= {5}
       >
       <Marker 
-        position={location}
-        zoom= {7}
+        position={initialCenter}
         name={'Current location'} /> 
         <InfoWindow onClose={this.onInfoWindowClose}>
             <div>
@@ -35,4 +37,5 @@ export class CurrentFireMapContainer extends Component {
   }
 }
 
-export default GoogleApiWrapper({ apiKey: apiKey })(CurrentFireMapContainer);
+export default GoogleApiWrapper({ apiKey: apiKey })(CurrentFires);
+// export default connect(mapStateToProps)(CurrentFires);
