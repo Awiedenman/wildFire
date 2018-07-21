@@ -9,14 +9,14 @@ import CurrentFires from '../../containers/CurrentFires/CurrentFires';
 class App extends Component {
 
   async componentDidMount() {
-    console.log('load');
+    // console.log('load');
     
     const currentFireData = await currentFireRequest();
-    console.log(currentFireData)
+    // console.log(currentFireData)
     this.props.storeCurrentFireData(currentFireData)
 
     const currentFireArticlesData = await currentFireArticlesRequest();
-    console.log(currentFireArticlesData)
+    // console.log(currentFireArticlesData)
   }
 
   render() {

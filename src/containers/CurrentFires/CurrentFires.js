@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { apiKey } from '../../api-key';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+// import { connect } from 'react-redux';
 
 
 export class CurrentFires extends Component {
@@ -37,3 +38,4 @@ export class CurrentFires extends Component {
 }
 
 export default GoogleApiWrapper({ apiKey: apiKey })(CurrentFires);
+// export default connect(mapStateToProps)(CurrentFires);
