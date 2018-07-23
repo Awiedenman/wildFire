@@ -9,15 +9,10 @@ import CurrentFires from '../../containers/CurrentFires/CurrentFires';
 
 class App extends Component {
 
-  async componentDidMount() {
-    // console.log('load');
-    
+  async componentDidMount() {    
     const currentFireData = await currentFireRequest();
     const parsedFiresData = JSON.parse(currentFireData)
-    console.log(parsedFiresData)
     const cleanedCurrentFireData = fireDataCleaner(parsedFiresData);
-    console.log(cleanedCurrentFireData);
-    
     this.props.storeCurrentFireData(cleanedCurrentFireData)
 
     // const currentFireArticlesData = await currentFireArticlesRequest();

@@ -9,14 +9,13 @@ export class CurrentFires extends Component {
   render() {
     const currentFireMarkers = this.props.currentFires.map(fire => {
       return <Marker
-          // title={'The marker`s title will appear as a fire.'}
+          title={'The marker`s title will appear as a fire.'}
           name={fire.name}
           position={{lat: fire.latitude, lng: fire.longitude }}
           key={fire.name} 
         />
-        })
+    })
       
-      console.log(this.props.currentFires);
     const initialCenter = {
       lat: 39,
       lng: -96.9
@@ -26,8 +25,6 @@ export class CurrentFires extends Component {
       width: '100%',
       height: '100%'
     }
-
-    // const fireMarkers = 
     
     return(
       <Map 
@@ -38,7 +35,6 @@ export class CurrentFires extends Component {
         zoom= {5}
       >
       {currentFireMarkers}
-      
         <InfoWindow onClose={this.onInfoWindowClose}>
             <div>
               {/* <h1>{this.state.selectedPlace.name}</h1> */}
