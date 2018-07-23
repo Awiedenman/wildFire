@@ -6,17 +6,16 @@ import { connect } from 'react-redux';
 
 export class CurrentFires extends Component {
   
-  // currentFireMarkers = this.props.currentFires.map(fire => {
-  //   return 
-  //     <Marker
-  //       // title={'The marker`s title will appear as a fire.'}
-  //       name={fire.name}
-  //       position={{lat: fire.latitude, lng: fire.longitude }} 
-  //     />
-  //     })
-    
-    render() {
-      console.log(this.props.currentFires);
+  render() {
+    const currentFireMarkers = this.props.currentFires.map(fire => {
+      return <Marker
+          title={'The marker`s title will appear as a fire.'}
+          name={fire.name}
+          position={{lat: fire.latitude, lng: fire.longitude }}
+          key={fire.name} 
+        />
+    })
+      
     const initialCenter = {
       lat: 39,
       lng: -96.9
@@ -26,8 +25,6 @@ export class CurrentFires extends Component {
       width: '100%',
       height: '100%'
     }
-
-    // const fireMarkers = 
     
     return(
       <Map 
@@ -37,8 +34,7 @@ export class CurrentFires extends Component {
         center={initialCenter}
         zoom= {5}
       >
-      {/* {this.currentFireMarkers} */}
-      
+      {currentFireMarkers}
         <InfoWindow onClose={this.onInfoWindowClose}>
             <div>
               {/* <h1>{this.state.selectedPlace.name}</h1> */}
