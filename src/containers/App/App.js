@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { storeCurrentFireData } from '../../actions';
+import { fireDataCleaner } from '../../heplers/cleaner';
 import { currentFireRequest, currentFireArticlesRequest } from '../../heplers/apiCalls';
 // import { CurrentFireMapContainer } from '../../containers/CurrentFireMapContainer/CurrentFireMapContainer';
 import CurrentFires from '../../containers/CurrentFires/CurrentFires';
@@ -12,11 +13,15 @@ class App extends Component {
     // console.log('load');
     
     const currentFireData = await currentFireRequest();
-    // console.log(currentFireData)
-    this.props.storeCurrentFireData(currentFireData)
+    const parsedFiresData = JSON.parse(currentFireData)
+    // console.log(parsedFiresData)
+    fireDataCleaner(parsedFiresData);
+    this.props.storeCurrentFireData(parsedFiresData)
 
     const currentFireArticlesData = await currentFireArticlesRequest();
-    // console.log(currentFireArticlesData)
+    const parsedFireArticleData = JSON.parse(currentFireArticlesData)
+
+    // console.log(parsedFireArticleData)
   }
 
   render() {
@@ -29,7 +34,7 @@ class App extends Component {
 }
 
 export const mapDispatchToProps = dispatch => ({
-  storeCurrentFireData: (currentFireData) => dispatch(storeCurrentFireData(currentFireData))
+  storeCurrentFireData: (parsedFiresData) => dispatch(storeCurrentFireData(parsedFiresData))
 })
 
 export default connect(null, mapDispatchToProps)(App)
