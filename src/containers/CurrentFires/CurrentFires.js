@@ -5,7 +5,34 @@ import { connect } from 'react-redux';
 
 
 export class CurrentFires extends Component {
-  
+  constructor(props){
+    super(props);
+    this.state = {
+      showingInfoWindow: false,
+      activeMarker: {},
+      selectedPlace: {},
+    }
+  }
+
+  onMarkerClick = (props, marker, e) => {
+    console.log('click on');
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true
+    });
+  }
+ 
+  onMapClicked = (props) => {
+    console.log('click off');
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      })
+    }
+  };
+
   render() {
     const currentFireMarkers = this.props.currentFires.map(fire => {
       return <Marker
@@ -16,6 +43,7 @@ export class CurrentFires extends Component {
           //   anchor: new google.maps.Point(32,32),
           //   scaledSize: new google.maps.Size(64,64)
           // }}
+          onClick={this.onMarkerClick}
           position={{lat: fire.latitude, lng: fire.longitude }}
           key={fire.name} 
         />
@@ -38,12 +66,21 @@ export class CurrentFires extends Component {
         initialCenter={initialCenter}
         center={initialCenter}
         zoom= {5}
+        onClick={this.onMapClicked}
       >
       {currentFireMarkers}
-        <InfoWindow onClose={this.onInfoWindowClose}>
-            <div>
-              {/* <h1>{this.state.selectedPlace.name}</h1> */}
-            </div>
+      <InfoWindow
+        marker={this.state.activeMarker}
+        visible={this.state.showingInfoWindow}>
+          <div>
+            <h1>{this.state.selectedPlace.name}</h1>
+            <h2>{this.state.selectedPlace.acresBurned}</h2>
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+
+
+          </div>
         </InfoWindow>
       </Map>
    )
