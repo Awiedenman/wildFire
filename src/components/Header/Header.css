@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+}
+
+.header {
+  position: relative;
+  background-image: url('../../images/funky-lines.png');
+  /* background-repeat: repeat; */
+  height: 100px;
+  color: #000;
+}
+
+.main-title {
+  /* padding: 30px; */
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  font-size: 50px;
+}

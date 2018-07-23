@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { storeCurrentFireData } from '../../actions';
 import { fireDataCleaner } from '../../heplers/cleaner';
+import { Header } from '../../components/Header/Header.js';
 import { currentFireRequest /* currentFireArticlesRequest*/ } from '../../heplers/apiCalls';
 // import { CurrentFireMapContainer } from '../../containers/CurrentFireMapContainer/CurrentFireMapContainer';
 import CurrentFires from '../../containers/CurrentFires/CurrentFires';
+import { Route } from 'react-router-dom';
 
 
 class App extends Component {
@@ -23,7 +25,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <CurrentFires/>
+        <Header />
+        <CurrentFires />
+        {/* <Route exact path='./' component={CurrentFires}/> */}
       </div>
     )
   }

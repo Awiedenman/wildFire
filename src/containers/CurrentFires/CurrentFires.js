@@ -37,6 +37,7 @@ export class CurrentFires extends Component {
     const currentFireMarkers = this.props.currentFires.map(fire => {
       return <Marker
           google={this.props.google}
+          title={fire.name}
           name={fire.name}
           acresBurned={fire.acresBurned}
           lastUpdate={fire.lastUpdate}
