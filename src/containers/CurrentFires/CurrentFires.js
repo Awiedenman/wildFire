@@ -9,8 +9,13 @@ export class CurrentFires extends Component {
   render() {
     const currentFireMarkers = this.props.currentFires.map(fire => {
       return <Marker
-          title={'The marker`s title will appear as a fire.'}
+          title={fire.name}
           name={fire.name}
+          // icon={{
+          //   url: "/path/to/custom_icon.png",
+          //   anchor: new google.maps.Point(32,32),
+          //   scaledSize: new google.maps.Size(64,64)
+          // }}
           position={{lat: fire.latitude, lng: fire.longitude }}
           key={fire.name} 
         />
