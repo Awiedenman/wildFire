@@ -51,8 +51,8 @@ export class CurrentFires extends Component {
     })
       
     const initialCenter = {
-      lat: 39,
-      lng: -96.9
+      lat: 55,
+      lng: -100
     }
     
     const style = {
@@ -70,7 +70,7 @@ export class CurrentFires extends Component {
           lat: this.state.selectedPlace.latitude,
           lng: this.state.selectedPlace.longitude
         }}
-        zoom= {5}
+        zoom= {3.7}
         onClick={this.onMapClicked}
       >
       {currentFireMarkers}
