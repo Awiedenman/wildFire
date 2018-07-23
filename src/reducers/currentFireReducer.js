@@ -1,8 +1,8 @@
 
-export const currentFireReducer = (state={}, action) => {
+export const currentFireReducer = (state=[], action) => {
   switch (action.type) {
     case 'STORE_CURRENT_FIRE_DATA':
-    return action.parsedFiresData
+    return action.cleanedCurrentFireData
   
     default:
       return state;
