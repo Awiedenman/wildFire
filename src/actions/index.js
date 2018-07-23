@@ -1,4 +1,4 @@
-export const storeCurrentFireData = (parsedFiresData) => ({
+export const storeCurrentFireData = (cleanedCurrentFireData) => ({
   type: 'STORE_CURRENT_FIRE_DATA',
-  parsedFiresData
+  cleanedCurrentFireData
 });
