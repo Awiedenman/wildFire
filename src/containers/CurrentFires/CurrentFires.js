@@ -5,20 +5,55 @@ import { connect } from 'react-redux';
 
 
 export class CurrentFires extends Component {
-  
+  constructor(props){
+    super(props);
+    this.state = {
+      showingInfoWindow: false,
+      activeMarker: {},
+      selectedPlace: {},
+    }
+  }
+
+  onMarkerClick = (props, marker, e) => {
+    console.log('click on');
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true
+    });
+  }
+ 
+  onMapClicked = (props) => {
+    console.log('click off');
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      })
+    }
+  };
+
   render() {
     const currentFireMarkers = this.props.currentFires.map(fire => {
       return <Marker
-          title={'The marker`s title will appear as a fire.'}
+          google={this.props.google}
+          title={fire.name}
           name={fire.name}
+          acresBurned={fire.acresBurned}
+          lastUpdate={fire.lastUpdate}
+          // icon={{url: "../../images/fire.svg",
+          //   anchor: new google.maps.Point(32,32),
+          //   scaledSize: new google.maps.Size(64,64)
+          // }}
+          onClick={this.onMarkerClick}
           position={{lat: fire.latitude, lng: fire.longitude }}
           key={fire.name} 
         />
     })
       
     const initialCenter = {
-      lat: 39,
-      lng: -96.9
+      lat: 55,
+      lng: -100
     }
     
     const style = {
@@ -26,22 +61,31 @@ export class CurrentFires extends Component {
       height: '100%'
     }
     
+    console.log(this.state.selectedPlace)
     return(
       <Map 
-        style={style}
         google={this.props.google} 
+        style={style}
         initialCenter={initialCenter}
-        center={initialCenter}
-        zoom= {5}
+        center = {{
+          lat: this.state.selectedPlace.latitude,
+          lng: this.state.selectedPlace.longitude
+        }}
+        zoom= {3.7}
+        onClick={this.onMapClicked}
       >
       {currentFireMarkers}
-        <InfoWindow onClose={this.onInfoWindowClose}>
-            <div>
-              {/* <h1>{this.state.selectedPlace.name}</h1> */}
-            </div>
+      <InfoWindow
+        marker={this.state.activeMarker}
+        visible={this.state.showingInfoWindow}>
+          <div>
+            <h1>{this.state.selectedPlace.name}</h1>
+            <h3>Current Burn: {this.state.selectedPlace.acresBurned}</h3>
+            <h3>Last updated on {this.state.selectedPlace.lastUpdate}</h3>
+          </div>
         </InfoWindow>
       </Map>
-   )
+    )
   }
 }
 
