@@ -36,11 +36,11 @@ export class CurrentFires extends Component {
   render() {
     const currentFireMarkers = this.props.currentFires.map(fire => {
       return <Marker
+          google={this.props.google}
           name={fire.name}
           acresBurned={fire.acresBurned}
           lastUpdate={fire.lastUpdate}
-          // icon={{
-          //   url: "/path/to/custom_icon.png",
+          // icon={{url: "../../images/fire.svg",
           //   anchor: new google.maps.Point(32,32),
           //   scaledSize: new google.maps.Size(64,64)
           // }}
@@ -63,10 +63,13 @@ export class CurrentFires extends Component {
     console.log(this.state.selectedPlace)
     return(
       <Map 
-        style={style}
         google={this.props.google} 
+        style={style}
         initialCenter={initialCenter}
-        center={initialCenter}
+        center = {{
+          lat: this.state.selectedPlace.latitude,
+          lng: this.state.selectedPlace.longitude
+        }}
         zoom= {5}
         onClick={this.onMapClicked}
       >
@@ -78,14 +81,10 @@ export class CurrentFires extends Component {
             <h1>{this.state.selectedPlace.name}</h1>
             <h3>Current Burn: {this.state.selectedPlace.acresBurned}</h3>
             <h3>Last updated on {this.state.selectedPlace.lastUpdate}</h3>
-            <h3></h3>
-            <h3></h3>
-
-
           </div>
         </InfoWindow>
       </Map>
-   )
+    )
   }
 }
 
