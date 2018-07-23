@@ -36,8 +36,9 @@ export class CurrentFires extends Component {
   render() {
     const currentFireMarkers = this.props.currentFires.map(fire => {
       return <Marker
-          title={fire.name}
           name={fire.name}
+          acresBurned={fire.acresBurned}
+          lastUpdate={fire.lastUpdate}
           // icon={{
           //   url: "/path/to/custom_icon.png",
           //   anchor: new google.maps.Point(32,32),
@@ -59,6 +60,7 @@ export class CurrentFires extends Component {
       height: '100%'
     }
     
+    console.log(this.state.selectedPlace)
     return(
       <Map 
         style={style}
@@ -74,10 +76,10 @@ export class CurrentFires extends Component {
         visible={this.state.showingInfoWindow}>
           <div>
             <h1>{this.state.selectedPlace.name}</h1>
-            <h2>{this.state.selectedPlace.acresBurned}</h2>
-            <h2></h2>
-            <h2></h2>
-            <h2></h2>
+            <h3>Current Burn: {this.state.selectedPlace.acresBurned}</h3>
+            <h3>Last updated on {this.state.selectedPlace.lastUpdate}</h3>
+            <h3></h3>
+            <h3></h3>
 
 
           </div>
