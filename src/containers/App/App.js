@@ -16,10 +16,10 @@ class App extends Component {
     console.log(parsedFiresData)
     this.props.storeCurrentFireData(parsedFiresData)
 
-    const currentFireArticlesData = await currentFireArticlesRequest();
-    const parsedFireArticleData = JSON.parse(currentFireArticlesData)
+    // const currentFireArticlesData = await currentFireArticlesRequest();
+    // const parsedFireArticleData = JSON.parse(currentFireArticlesData)
 
-    console.log(parsedFireArticleData)
+    // console.log(parsedFireArticleData)
   }
 
   render() {
@@ -32,7 +32,7 @@ class App extends Component {
 }
 
 export const mapDispatchToProps = dispatch => ({
-  storeCurrentFireData: (currentFireData) => dispatch(storeCurrentFireData(currentFireData))
+  storeCurrentFireData: (parsedFiresData) => dispatch(storeCurrentFireData(parsedFiresData))
 })
 
 export default connect(null, mapDispatchToProps)(App)

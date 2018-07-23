@@ -6,9 +6,9 @@ import { connect } from 'react-redux';
 
 export class CurrentFires extends Component {
   
-  currentFireMarkers = this.props.currentFires.rss.channel.item.map(fire => {
-      console.log(fire)
-    })
+  // currentFireMarkers = this.props.currentFires.rss.channel.item.map(fire => {
+  //    return fire
+  //   })
     
     render() {
       console.log('fires', this.props.currentFires);
@@ -30,9 +30,7 @@ export class CurrentFires extends Component {
         center={initialCenter}
         zoom= {5}
       >
-        <Marker 
-          position={initialCenter}
-          name={'Current location'} /> 
+      
         <InfoWindow onClose={this.onInfoWindowClose}>
             <div>
               {/* <h1>{this.state.selectedPlace.name}</h1> */}
