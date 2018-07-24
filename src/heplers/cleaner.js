@@ -1,5 +1,5 @@
 export const fireDataCleaner = (fireData) => {
-  console.log(fireData)
+  // console.log(fireData)
   const cleanFireData = fireData.rss.channel.item.reduce((currentFires, fire )=> {
     const fireObject = {};
     fireObject['name'] = fire.title._text.split(',')[0],
@@ -11,6 +11,6 @@ export const fireDataCleaner = (fireData) => {
     currentFires.push(fireObject)
     return currentFires
   }, [])
-  console.log('out', cleanFireData);
+  // console.log('out', cleanFireData);
   return cleanFireData
 }
