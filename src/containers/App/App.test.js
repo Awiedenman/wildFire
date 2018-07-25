@@ -4,9 +4,12 @@ import { App, mapDispatchToProps } from './App';
 import { storeCurrentFireData } from '../../actions';
 import { currentFireRequest } from '../../heplers/apiCalls/apiCalls';
 import { fireDataCleaner } from '../../heplers/cleaner';
-// import { currentFireRequest } from '../../heplers/apiCalls';
 import { mockCleanFireData } from '../../MockData/mockCleanFireData';
+import { mockParsedFireData } from '../../MockData/mockParsedFireData';
 
+jest.mock('../../heplers/apiCalls/apiCalls', () => ({
+  currentFireRequest: jest.fn().mockImplementation(() => JSON.stringify(mockParsedFireData))
+}))
 
 describe('App', () => {
   let wrapper;
@@ -21,12 +24,7 @@ describe('App', () => {
     console.log(wrapper)
 
     test('should fetch initial fire data on page load', async () => {
-      // const mockCurrentFireRequest = jest.fn();
-      await wrapper.instance().componentDidMount();
-      await currentFireRequest();
-      fireDataCleaner();
-
-      expect(mockStoreCurrentFireData).toHaveBeenCalled();
+      await expect(mockStoreCurrentFireData).toHaveBeenCalled();
     })
   })
   
@@ -40,7 +38,7 @@ describe('App', () => {
 
       mappedProps.storeCurrentFireData(mockCleanFireData)
 
-      expect(mappedProps).toHaveBeenCalledWith(actionToDispatch);
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     })
   })
   

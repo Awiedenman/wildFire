@@ -14,7 +14,7 @@ var convert = require('xml-js');
         // console.log(jsonData)
         return jsonData
       } catch(error){
-        throw Error('Couldn\'t retreive the current fire')
+        throw Error('Couldn\'t retreive the current fires list')
       }
  }
 

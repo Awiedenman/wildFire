@@ -2,20 +2,22 @@
 import { currentFireRequest } from './apiCalls';
 // import { mockCleanFireData } from '../../MockData/mockCleanFireData';
 
-describe('currentFireResponse', () => {
-  test.skip('should call fetch with the correct parameters', async () => {
+describe.skip('currentFireResponse', () => {
+  test('should call fetch with the correct parameters', async () => {
     const url = 'https://cors-anywhere.herokuapp.com/https://www.geomac.gov/DynContent/georss/nifc_large_firesW3C.xml';
     window.fetch = jest.fn().mockImplementation(() => 
     Promise.resolve({
       ok: true,
+      // status: 200,
       json: () => Promise.resolve()
     }))
+
     // !what do I do here when it cam from xml?
 
     await currentFireRequest();
 
-    expect(window.fetch).toBeCalled;
-    // expect(window.fetch).toHaveBeenCalledWith(url)
+    expect(window.fetch).toBeCalled();
+    expect(window.fetch).toHaveBeenCalledWith(url)
   })
 
   test('should return an error if the repsonse status is bad', async () => {
@@ -26,7 +28,7 @@ describe('currentFireResponse', () => {
     }))
 
     const result = currentFireRequest();
-    const expected = Error('Couldn\'t retreive the current fire');
+    const expected = Error('Couldn\'t retreive the current fires list');
 
     await expect(result).rejects.toEqual(expected);
 

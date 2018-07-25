@@ -21,7 +21,16 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Unknown />,
-        <Connect(Wrapper) />,
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/"
+/>,
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/reportFires"
+/>,
       ],
     },
     "ref": null,
@@ -39,7 +48,24 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {},
+        "props": Object {
+          "component": [Function],
+          "exact": true,
+          "path": "/",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "exact": true,
+          "path": "/reportFires",
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -55,7 +81,16 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Unknown />,
-          <Connect(Wrapper) />,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/reportFires"
+/>,
         ],
       },
       "ref": null,
@@ -73,7 +108,24 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {},
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/reportFires",
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],

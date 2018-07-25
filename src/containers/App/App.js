@@ -15,9 +15,9 @@ export class App extends Component {
   async componentDidMount() {    
     const currentFireData = await currentFireRequest();
     const parsedFiresData = JSON.parse(currentFireData)
-    console.log(parsedFiresData)
+    console.log('parsed', parsedFiresData)
     const cleanedCurrentFireData = fireDataCleaner(parsedFiresData);
-    console.log('cleanedCurrentFireData', cleanedCurrentFireData)
+    // console.log('cleanedCurrentFireData', cleanedCurrentFireData)
     this.props.storeCurrentFireData(cleanedCurrentFireData)
 
     // const currentFireArticlesData = await currentFireArticlesRequest();
@@ -31,7 +31,6 @@ export class App extends Component {
         <Header />
         <Route exact path='/' component={CurrentFires}/>
         <Route exact path='/reportFires' component={ReportFires}/>
-
       </div>
     )
   }
