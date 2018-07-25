@@ -7,6 +7,7 @@ import { currentFireRequest /* currentFireArticlesRequest*/ } from '../../hepler
 import CurrentFires from '../../containers/CurrentFires/CurrentFires';
 import { Route } from 'react-router-dom';
 import { ReportFires } from '../../components/ReportFires/ReportFires';
+import { withRouter } from 'react-router-dom';
 
 
 export class App extends Component {
@@ -40,4 +41,4 @@ export const mapDispatchToProps = dispatch => ({
   storeCurrentFireData: (cleanedCurrentFireData) => dispatch(storeCurrentFireData(cleanedCurrentFireData))
 })
 
-export default connect(null, mapDispatchToProps)(App);
+export default withRouter(connect(null, mapDispatchToProps)(App));
