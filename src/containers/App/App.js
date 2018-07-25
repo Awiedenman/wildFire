@@ -16,7 +16,7 @@ export class App extends Component {
     const parsedFiresData = JSON.parse(currentFireData)
     console.log(parsedFiresData)
     const cleanedCurrentFireData = fireDataCleaner(parsedFiresData);
-    // console.log('cleanedCurrentFireData', cleanedCurrentFireData)
+    console.log('cleanedCurrentFireData', cleanedCurrentFireData)
     this.props.storeCurrentFireData(cleanedCurrentFireData)
 
     // const currentFireArticlesData = await currentFireArticlesRequest();

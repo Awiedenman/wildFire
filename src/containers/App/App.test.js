@@ -5,6 +5,7 @@ import { storeCurrentFireData } from '../../actions';
 import { currentFireRequest } from '../../heplers/apiCalls';
 import { fireDataCleaner } from '../../heplers/cleaner';
 // import { currentFireRequest } from '../../heplers/apiCalls';
+import { mockCleanFireData } from '../../MockData/mockCleanFireData';
 
 
 describe('App', () => {
@@ -63,20 +64,12 @@ describe('App', () => {
 
       expect(mockStoreCurrentFireData).toHaveBeenCalled();
     })
-    
   })
   
-  describe.skip('mapDispatchToProps', () => {
+  describe('mapDispatchToProps', () => {
     test('should call dispatch when storeCurrentFireData is called', () => {
       const mockDispatch = jest.fn();
-      const mockCleanFireData = [{ 
-        acresBurned : "  54129 acres" ,
-        image : "416 .png" ,
-        lastUpdate : " 7/23/2018 11:00:00 PM" ,
-        latitude : "37.4605800000001",
-        longitude : "-107.8081",
-        name : "416 "
-      }]
+      // const mockCleanFireData = mockCleanFireData
 
       const actionToDispatch = storeCurrentFireData(mockCleanFireData);
       const mappedProps = mapDispatchToProps(mockDispatch);
@@ -90,5 +83,4 @@ describe('App', () => {
   test('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   })
-  
 })
