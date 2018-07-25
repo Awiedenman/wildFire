@@ -6,15 +6,17 @@ import { Header } from '../../components/Header/Header.js';
 import { currentFireRequest /* currentFireArticlesRequest*/ } from '../../heplers/apiCalls';
 // import { CurrentFireMapContainer } from '../../containers/CurrentFireMapContainer/CurrentFireMapContainer';
 import CurrentFires from '../../containers/CurrentFires/CurrentFires';
-import { Route } from 'react-router-dom';
+// import { Route } from 'react-router-dom';
 
 
-class App extends Component {
+export class App extends Component {
 
   async componentDidMount() {    
     const currentFireData = await currentFireRequest();
     const parsedFiresData = JSON.parse(currentFireData)
+    console.log(parsedFiresData)
     const cleanedCurrentFireData = fireDataCleaner(parsedFiresData);
+    console.log('cleanedCurrentFireData', cleanedCurrentFireData)
     this.props.storeCurrentFireData(cleanedCurrentFireData)
 
     // const currentFireArticlesData = await currentFireArticlesRequest();

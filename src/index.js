@@ -13,7 +13,5 @@ const store = createStore(rootReducer, reduxDevTools);
 
 ReactDOM.render(
 <Provider store={store}>
-  {/* <BrowserRouter> */}
     <App />
-  {/* </BrowserRouter > */}
 </Provider>, document.getElementById('root'));

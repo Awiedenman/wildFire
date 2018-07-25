@@ -15,7 +15,6 @@ export class CurrentFires extends Component {
   }
 
   onMarkerClick = (props, marker, e) => {
-    console.log('click on');
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
@@ -24,7 +23,6 @@ export class CurrentFires extends Component {
   }
  
   onMapClicked = (props) => {
-    console.log('click off');
     if (this.state.showingInfoWindow) {
       this.setState({
         showingInfoWindow: false,
@@ -61,7 +59,6 @@ export class CurrentFires extends Component {
       height: '100%'
     }
     
-    console.log(this.state.selectedPlace)
     return(
       <Map 
         google={this.props.google} 
@@ -89,7 +86,7 @@ export class CurrentFires extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   currentFires: state.currentFires
 })
 
