@@ -7,7 +7,7 @@ describe('actions', () => {
     // const cleanedCurrentFireData = mockCleanFireData;
     const expectedAction = {
       type: 'STORE_CURRENT_FIRE_DATA',
-      cleanedCurrentFireData:  mockCleanFireData
+      cleanedCurrentFireData: mockCleanFireData
     };
 
     const result = actions.storeCurrentFireData(mockCleanFireData);
