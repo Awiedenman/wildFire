@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import { storeCurrentFireData } from '../../actions';
 import { fireDataCleaner } from '../../heplers/cleaner';
 import { Header } from '../../components/Header/Header.js';
-import { currentFireRequest /* currentFireArticlesRequest*/ } from '../../heplers/apiCalls';
-// import { CurrentFireMapContainer } from '../../containers/CurrentFireMapContainer/CurrentFireMapContainer';
+import { currentFireRequest /* currentFireArticlesRequest*/ } from '../../heplers/apiCalls/apiCalls';
 import CurrentFires from '../../containers/CurrentFires/CurrentFires';
-// import { Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import { ReportFires } from '../../components/ReportFires/ReportFires';
 
 
 export class App extends Component {
@@ -28,8 +28,9 @@ export class App extends Component {
     return (
       <div>
         <Header />
-        <CurrentFires />
-        {/* <Route exact path='./' component={CurrentFires}/> */}
+        <Route exact path='/' component={CurrentFires}/>
+        <Route exact path='/reportFires' component={ReportFires}/>
+
       </div>
     )
   }
@@ -39,4 +40,4 @@ export const mapDispatchToProps = dispatch => ({
   storeCurrentFireData: (cleanedCurrentFireData) => dispatch(storeCurrentFireData(cleanedCurrentFireData))
 })
 
-export default connect(null, mapDispatchToProps)(App)
+export default connect(null, mapDispatchToProps)(App);
