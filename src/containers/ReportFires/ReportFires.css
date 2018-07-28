@@ -1,8 +1,31 @@
+.reportFires {
+  display: flex;
+}
+
 .reportFires-form {
   display: inline-block;
   width: 40vw;
 }
+
 .reportFires-map {
   display: inline-block;
   width: 40vw;
+}
+
+.reportFire-form-section {
+  text-align: center;
+  outline: 1px #000 ridge;
+  padding: 10px;
+  margin: 25px;
+}
+
+form {
+  text-align: center;
+  outline: 1px #000 ridge;
+  padding: 10px;
+  margin: 25px;
+}
+
+button {
+  width: 5rem;
 }
