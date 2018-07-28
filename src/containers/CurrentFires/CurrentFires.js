@@ -50,25 +50,25 @@ export class CurrentFires extends Component {
     })
       // debugger;
     const initialCenter = {
-      lat: 55,
-      lng: -100
+      lat: 45,
+      lng: -75
     }
     
-    const style = {
-      width: '100%',
-      height: '100%'
-    }
+    // const style = {
+    //   width: '100%',
+    //   height: '100%'
+    // }
     
     return(
       <Map 
         google={this.props.google} 
-        style={style}
+        // style={style}
         initialCenter={initialCenter}
         center = {{
           lat: this.state.selectedPlace.latitude,
           lng: this.state.selectedPlace.longitude
         }}
-        zoom= {3.7}
+        zoom= {3.4}
         onClick={this.onMapClicked}
       >
       {currentFireMarkers}
