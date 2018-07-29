@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { postUnverifiedFires } from '../../heplers/apiCalls/apiCalls';
 
 export class ReportFiresForm extends Component {
   constructor(props){
@@ -16,6 +17,11 @@ export class ReportFiresForm extends Component {
   handleChange = (e) =>{
     const { value, name } =e.target;
     this.setState({[name]: value})
+  }
+
+  postUnverifiedFires = (e) => {
+    e.preventDefault();
+    postUnverifiedFires(this.state)
   }
 
   render() {
@@ -88,7 +94,7 @@ export class ReportFiresForm extends Component {
               placeholder='Zip Code'
             />  
         </section>
-        <button>Submit</button>
+        <button onClick={postUnverifiedFires}>Submit</button>
       </form>
     )
   }

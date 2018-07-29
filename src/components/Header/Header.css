@@ -6,14 +6,27 @@
   position: relative;
   background-image: url('../../images/funky-lines.png');
   /* background-repeat: repeat; */
-  height: 100px;
+  height: 9rem;
   color: #000;
+  border-bottom: 0.5rem double #052709;
 }
 
 .main-title {
   /* padding: 30px; */
   position: absolute;
   right: 30px;
-  top: 20px;
-  font-size: 50px;
+  top: 2.5rem;
+  font-size: 5rem;
+  color: #052709;
+  padding-bottom: 2rem;
+}
+
+.header-navLinks {
+padding: 5rem;
+}
+
+a {
+  padding: 1rem;
+  text-decoration: none;
+  /* color */
 }
