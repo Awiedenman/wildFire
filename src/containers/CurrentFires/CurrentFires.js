@@ -61,15 +61,15 @@ export class CurrentFires extends Component {
     }
     
     // const style = {
-    //   width: '100%',
-    //   height: '100%'
+    //   width: '50%',
+    //   height: '50%'
     // }
     
     return(
       <div className='map'>
         <Map 
           google={this.props.google} 
-          // style={style}
+          style={this.props.style}
           initialCenter={initialCenter}
           center = {{
             lat: this.state.selectedPlace.latitude,
