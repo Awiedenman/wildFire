@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "google-maps-react": "^2.0.2",
+    "js-marker-clusterer": "^1.0.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
