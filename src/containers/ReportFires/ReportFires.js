@@ -18,6 +18,7 @@ export class ReportFires extends Component {
         <div className='reportFires-map'>
           <CurrentFires
             style={style}/>
+          <button className='map-submit'>Submit</button>
         </div>
       </div>
     )

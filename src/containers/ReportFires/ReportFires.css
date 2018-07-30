@@ -7,13 +7,15 @@
   align-items: center;
   justify-content: center;
   width: 40vw;
+  height: 80vh;
 }
 
 .reportFires-map {
   display: inline-block;
   width: 40vw;
   /* margin: 2rem; */
-  padding: 2rem;
+  padding: 7.5rem 4rem;
+  
 }
 
 .reportFire-form-section {
@@ -39,4 +41,8 @@ button {
 }
 button:hover {
   background-color: aquamarine;
+}
+
+.map-submit {
+  
 }

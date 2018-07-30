@@ -26,7 +26,13 @@ padding: 5rem;
 }
 
 a {
-  padding: 1rem;
+  padding-right: 1rem;
   text-decoration: none;
-  /* color */
+  color: #052709;
+  font-size: 1.5rem;
+}
+
+a:hover {
+  color: #54855A;
+  border-bottom: .1rem solid #54855A;
 }
