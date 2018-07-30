@@ -1,0 +1,48 @@
+.reportFires {
+  display: flex;
+}
+
+.reportFires-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+  height: 80vh;
+}
+
+.reportFires-map {
+  display: inline-block;
+  width: 40vw;
+  /* margin: 2rem; */
+  padding: 7.5rem 4rem;
+  
+}
+
+.reportFire-form-section {
+  text-align: center;
+  border: 1px #000 ridge;
+  padding: 10px;
+  margin: 25px;
+}
+
+form {
+  text-align: center;
+  border: 1px #000 ridge;
+  padding: 10px;
+  margin: 25px;
+}
+
+button {
+  width: 5rem;
+  border: 1px #000 ridge;
+  border-radius: .2rem;
+  box-shadow: 1px 1px 1px
+
+}
+button:hover {
+  background-color: aquamarine;
+}
+
+.map-submit {
+  
+}

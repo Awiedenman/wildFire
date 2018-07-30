@@ -33,3 +33,14 @@ var convert = require('xml-js');
      throw Error('Couldn\'t retreive the current fire')
    }
  }
+
+ export const postUnverifiedFires = async(unverifiedFire) => {
+  const url = 'https://localhost:3000/reportFires/api/unverifiedFires'
+  const postRequest = fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(...unverifiedFire),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+ }
