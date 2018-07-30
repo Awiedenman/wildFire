@@ -1,0 +1,979 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReportFiresForm should match snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ReportFiresForm />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <section
+          className="reportFire-form-section"
+>
+          <h3>
+                    Name
+          </h3>
+          <label
+                    for="name"
+          />
+          <input
+                    id="name"
+                    name="firstName"
+                    onChange={[Function]}
+                    placeholder="First Name"
+                    value=""
+          />
+          <label
+                    for="lastName"
+          />
+          <input
+                    id="lastName"
+                    name="lastName"
+                    onChange={[Function]}
+                    placeholder="Last Name"
+                    value=""
+          />
+</section>,
+        <br />,
+        <section
+          className="reportFire-form-section"
+>
+          <h3>
+                    (Optional)
+          </h3>
+          <label
+                    for="latitude"
+          />
+          <input
+                    id="latitude"
+                    name="latitude"
+                    onChange={[Function]}
+                    placeholder="Latitude"
+                    value=""
+          />
+          <label
+                    for="longitude"
+          />
+          <input
+                    id="longitude"
+                    name="longitude"
+                    onChange={[Function]}
+                    placeholder="Longitude"
+                    value=""
+          />
+</section>,
+        <br />,
+        <section
+          className="reportFire-form-section"
+>
+          <label
+                    for="city"
+          />
+          <h3>
+                    Location
+          </h3>
+          <input
+                    id="city"
+                    name="city"
+                    onChange={[Function]}
+                    placeholder="City"
+                    value=""
+          />
+          <label
+                    for="state"
+          />
+          <input
+                    id="state"
+                    name="state"
+                    onChange={[Function]}
+                    placeholder="State"
+                    value=""
+          />
+          <label
+                    for="zip code"
+          />
+          <input
+                    id="zipCode"
+                    name="zipCode"
+                    onChange={[Function]}
+                    placeholder="Zip Code"
+                    value=""
+          />
+</section>,
+        <button
+          onClick={[Function]}
+>
+          Submit
+</button>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3>
+              Name
+</h3>,
+            <label
+              for="name"
+/>,
+            <input
+              id="name"
+              name="firstName"
+              onChange={[Function]}
+              placeholder="First Name"
+              value=""
+/>,
+            <label
+              for="lastName"
+/>,
+            <input
+              id="lastName"
+              name="lastName"
+              onChange={[Function]}
+              placeholder="Last Name"
+              value=""
+/>,
+          ],
+          "className": "reportFire-form-section",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Name",
+            },
+            "ref": null,
+            "rendered": "Name",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "for": "name",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "id": "name",
+              "name": "firstName",
+              "onChange": [Function],
+              "placeholder": "First Name",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "for": "lastName",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "id": "lastName",
+              "name": "lastName",
+              "onChange": [Function],
+              "placeholder": "Last Name",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+        ],
+        "type": "section",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "br",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3>
+              (Optional)
+</h3>,
+            <label
+              for="latitude"
+/>,
+            <input
+              id="latitude"
+              name="latitude"
+              onChange={[Function]}
+              placeholder="Latitude"
+              value=""
+/>,
+            <label
+              for="longitude"
+/>,
+            <input
+              id="longitude"
+              name="longitude"
+              onChange={[Function]}
+              placeholder="Longitude"
+              value=""
+/>,
+          ],
+          "className": "reportFire-form-section",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "(Optional)",
+            },
+            "ref": null,
+            "rendered": "(Optional)",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "for": "latitude",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "id": "latitude",
+              "name": "latitude",
+              "onChange": [Function],
+              "placeholder": "Latitude",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "for": "longitude",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "id": "longitude",
+              "name": "longitude",
+              "onChange": [Function],
+              "placeholder": "Longitude",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+        ],
+        "type": "section",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "br",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label
+              for="city"
+/>,
+            <h3>
+              Location
+</h3>,
+            <input
+              id="city"
+              name="city"
+              onChange={[Function]}
+              placeholder="City"
+              value=""
+/>,
+            <label
+              for="state"
+/>,
+            <input
+              id="state"
+              name="state"
+              onChange={[Function]}
+              placeholder="State"
+              value=""
+/>,
+            <label
+              for="zip code"
+/>,
+            <input
+              id="zipCode"
+              name="zipCode"
+              onChange={[Function]}
+              placeholder="Zip Code"
+              value=""
+/>,
+          ],
+          "className": "reportFire-form-section",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "for": "city",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Location",
+            },
+            "ref": null,
+            "rendered": "Location",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "id": "city",
+              "name": "city",
+              "onChange": [Function],
+              "placeholder": "City",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "for": "state",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "id": "state",
+              "name": "state",
+              "onChange": [Function],
+              "placeholder": "State",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "for": "zip code",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "id": "zipCode",
+              "name": "zipCode",
+              "onChange": [Function],
+              "placeholder": "Zip Code",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+        ],
+        "type": "section",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Submit",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Submit",
+        "type": "button",
+      },
+    ],
+    "type": "form",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <section
+            className="reportFire-form-section"
+>
+            <h3>
+                        Name
+            </h3>
+            <label
+                        for="name"
+            />
+            <input
+                        id="name"
+                        name="firstName"
+                        onChange={[Function]}
+                        placeholder="First Name"
+                        value=""
+            />
+            <label
+                        for="lastName"
+            />
+            <input
+                        id="lastName"
+                        name="lastName"
+                        onChange={[Function]}
+                        placeholder="Last Name"
+                        value=""
+            />
+</section>,
+          <br />,
+          <section
+            className="reportFire-form-section"
+>
+            <h3>
+                        (Optional)
+            </h3>
+            <label
+                        for="latitude"
+            />
+            <input
+                        id="latitude"
+                        name="latitude"
+                        onChange={[Function]}
+                        placeholder="Latitude"
+                        value=""
+            />
+            <label
+                        for="longitude"
+            />
+            <input
+                        id="longitude"
+                        name="longitude"
+                        onChange={[Function]}
+                        placeholder="Longitude"
+                        value=""
+            />
+</section>,
+          <br />,
+          <section
+            className="reportFire-form-section"
+>
+            <label
+                        for="city"
+            />
+            <h3>
+                        Location
+            </h3>
+            <input
+                        id="city"
+                        name="city"
+                        onChange={[Function]}
+                        placeholder="City"
+                        value=""
+            />
+            <label
+                        for="state"
+            />
+            <input
+                        id="state"
+                        name="state"
+                        onChange={[Function]}
+                        placeholder="State"
+                        value=""
+            />
+            <label
+                        for="zip code"
+            />
+            <input
+                        id="zipCode"
+                        name="zipCode"
+                        onChange={[Function]}
+                        placeholder="Zip Code"
+                        value=""
+            />
+</section>,
+          <button
+            onClick={[Function]}
+>
+            Submit
+</button>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3>
+                Name
+</h3>,
+              <label
+                for="name"
+/>,
+              <input
+                id="name"
+                name="firstName"
+                onChange={[Function]}
+                placeholder="First Name"
+                value=""
+/>,
+              <label
+                for="lastName"
+/>,
+              <input
+                id="lastName"
+                name="lastName"
+                onChange={[Function]}
+                placeholder="Last Name"
+                value=""
+/>,
+            ],
+            "className": "reportFire-form-section",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Name",
+              },
+              "ref": null,
+              "rendered": "Name",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "for": "name",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "id": "name",
+                "name": "firstName",
+                "onChange": [Function],
+                "placeholder": "First Name",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "for": "lastName",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "id": "lastName",
+                "name": "lastName",
+                "onChange": [Function],
+                "placeholder": "Last Name",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+          ],
+          "type": "section",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3>
+                (Optional)
+</h3>,
+              <label
+                for="latitude"
+/>,
+              <input
+                id="latitude"
+                name="latitude"
+                onChange={[Function]}
+                placeholder="Latitude"
+                value=""
+/>,
+              <label
+                for="longitude"
+/>,
+              <input
+                id="longitude"
+                name="longitude"
+                onChange={[Function]}
+                placeholder="Longitude"
+                value=""
+/>,
+            ],
+            "className": "reportFire-form-section",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "(Optional)",
+              },
+              "ref": null,
+              "rendered": "(Optional)",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "for": "latitude",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "id": "latitude",
+                "name": "latitude",
+                "onChange": [Function],
+                "placeholder": "Latitude",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "for": "longitude",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "id": "longitude",
+                "name": "longitude",
+                "onChange": [Function],
+                "placeholder": "Longitude",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+          ],
+          "type": "section",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <label
+                for="city"
+/>,
+              <h3>
+                Location
+</h3>,
+              <input
+                id="city"
+                name="city"
+                onChange={[Function]}
+                placeholder="City"
+                value=""
+/>,
+              <label
+                for="state"
+/>,
+              <input
+                id="state"
+                name="state"
+                onChange={[Function]}
+                placeholder="State"
+                value=""
+/>,
+              <label
+                for="zip code"
+/>,
+              <input
+                id="zipCode"
+                name="zipCode"
+                onChange={[Function]}
+                placeholder="Zip Code"
+                value=""
+/>,
+            ],
+            "className": "reportFire-form-section",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "for": "city",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Location",
+              },
+              "ref": null,
+              "rendered": "Location",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "id": "city",
+                "name": "city",
+                "onChange": [Function],
+                "placeholder": "City",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "for": "state",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "id": "state",
+                "name": "state",
+                "onChange": [Function],
+                "placeholder": "State",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "for": "zip code",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "id": "zipCode",
+                "name": "zipCode",
+                "onChange": [Function],
+                "placeholder": "Zip Code",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+          ],
+          "type": "section",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Submit",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Submit",
+          "type": "button",
+        },
+      ],
+      "type": "form",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

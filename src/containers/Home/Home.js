@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import CurrentFires from '../CurrentFires/CurrentFires';
-import { fireDataCleaner } from '../../heplers/cleaner';
+import { fireDataCleaner } from '../../heplers/cleaner/cleaner';
 import { currentFireRequest } from '../../heplers/apiCalls/apiCalls';
 import { storeCurrentFireData } from '../../actions/index';
 import { connect } from 'react-redux';
@@ -15,13 +15,18 @@ export class Home extends Component {
     }
   }
 
-  async componentDidMount() {  
-    await this.setState({isLoading: true}) 
-    const currentFireData = await currentFireRequest();
-    await this.setState({isLoading: false})
-    const parsedFiresData = JSON.parse(currentFireData)
-    const cleanedCurrentFireData = fireDataCleaner(parsedFiresData);
-    this.props.storeCurrentFireData(cleanedCurrentFireData)
+  async componentDidMount() { 
+    try{
+      await this.setState({isLoading: true}) 
+      const currentFireData = await currentFireRequest();
+      console.log(currentFireData)
+      await this.setState({isLoading: false});
+      const cleanedCurrentFireData = fireDataCleaner(currentFireData);
+      this.props.storeCurrentFireData(cleanedCurrentFireData)
+      // return currentFireData
+    } catch (error) {
+      throw Error(`Couldn\'t retreive the current fires list ${error.message}`)
+    }
   }
   style = {
         width: '100%',
@@ -40,7 +45,6 @@ export class Home extends Component {
 export const mapDispatchToProps = dispatch => ({
   storeCurrentFireData: (cleanedCurrentFireData) => dispatch(storeCurrentFireData(cleanedCurrentFireData))
 })
-// debugger
 
 export default withRouter(connect(null, mapDispatchToProps)(Home));
 

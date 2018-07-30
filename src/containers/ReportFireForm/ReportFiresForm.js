@@ -14,15 +14,16 @@ export class ReportFiresForm extends Component {
       zipCode: ''
     }
   }
+
   handleChange = (e) =>{
-    const { value, name } =e.target;
+    const { value, name } = e.target;
     this.setState({[name]: value})
   }
 
-  postUnverifiedFires = (e) => {
-    e.preventDefault();
-    postUnverifiedFires(this.state)
-  }
+  // postUnverifiedFires = (e) => {
+  //   e.preventDefault();
+  //   postUnverifiedFires(this.state)
+  // }
 
   render() {
     return (

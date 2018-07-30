@@ -2,7 +2,6 @@ var convert = require('xml-js');
  
  export const currentFireRequest = async () => {
    const url = 'https://cors-anywhere.herokuapp.com/https://www.geomac.gov/DynContent/georss/nifc_large_firesW3C.xml';
-   try{
      const xmlResponse = await fetch(url);
      const currentFireDataXml = await xmlResponse.text();
      var jsonData = convert.xml2json(
@@ -10,10 +9,9 @@ var convert = require('xml-js');
          compact: true,
          spaces: 2
         });
-        return jsonData
-      } catch(error){
-        throw Error('Couldn\'t retreive the current fires list')
-      }
+        console.log(JSON.parse(jsonData));
+        
+        return JSON.parse(jsonData) 
  }
 
  export const currentFireArticlesRequest = async () => {
@@ -26,8 +24,6 @@ var convert = require('xml-js');
          compact: true,
          spaces: 2
        });
-    //  console.log(currentFireArticlesXml)
-    //  console.log(jsonData)
      return jsonData
    } catch (error) {
      throw Error('Couldn\'t retreive the current fire')

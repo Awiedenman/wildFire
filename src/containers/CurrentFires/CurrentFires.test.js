@@ -4,6 +4,17 @@ import { mockCleanFireData } from '../../MockData/mockCleanFireData';
 import { CurrentFires, mapStateToProps } from './CurrentFires';
 
 describe('CurrentFires', () => {
+
+  describe.skip('onMarkerClick', () => {
+    test('should set the state ', () => {
+    
+  })
+
+  describe('onMapClicked', () => {
+    
+  })
+  
+  
   
   describe('mapStateToProps', () => {
     test('should return an array with cleanedCurrentFireData from state', () => {
@@ -28,4 +39,5 @@ describe('CurrentFires', () => {
 
       expect(wrapper).toMatchSnapshot();
   })  
+})
 })

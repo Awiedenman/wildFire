@@ -17,6 +17,7 @@ export class CurrentFires extends Component {
   }
   
   onMarkerClick = (props, marker, e) => {
+    console.log(props)
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
@@ -54,7 +55,7 @@ export class CurrentFires extends Component {
 
     const initialCenter = {
       lat: 45,
-      lng: -75
+      lng: -105
     }
 
 // const mc = new MarkerClusterer(

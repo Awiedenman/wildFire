@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Header } from '../../components/Header/Header.js';
 // import CurrentFires from '../../containers/CurrentFires/CurrentFires';
 import { Route } from 'react-router-dom';
-import { ReportFires } from '../../containers/ReportFires/ReportFires';
+import { ReportFires } from '../../components/ReportFires/ReportFires';
 import Home from '../Home/Home';
 
 
