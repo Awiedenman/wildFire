@@ -1,17 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import CurrentFires from '../../containers/CurrentFires/CurrentFires';
-import { ReportFiresForm } from '../../containers/ReportFireForm/ReportFiresForm';
+import ReportFiresForm from '../../containers/ReportFiresForm/ReportFiresForm';
 
 import './ReportFires.css';
 
 export class ReportFires extends Component {
   render(){
     const style = {
-          width: '100%',
-          height: '100%'
-        }
+      width: '100%',
+      height: '100%'
+    };
   
-    return(
+    return (
       <div className='reportFires'>
         <div className='reportFires-map'>
           <CurrentFires
@@ -22,7 +22,7 @@ export class ReportFires extends Component {
           <ReportFiresForm />
         </div>
       </div>
-    )
+    );
   }
 }
 

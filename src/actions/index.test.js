@@ -1,4 +1,3 @@
-import React from 'react';
 import * as actions from '../actions/index';
 import { mockCleanFireData } from '../MockData/mockCleanFireData';
 
@@ -13,5 +12,5 @@ describe('actions', () => {
     const result = actions.storeCurrentFireData(mockCleanFireData);
 
     expect(result).toEqual(expectedAction);
-  })
-})
+  });
+});

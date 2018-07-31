@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export const mockXmlData = "<?xml version='1.0'?>"
 + "<?xml-stylesheet href='rssxsl.html' type='text/html' media='screen'?>"
 +"<rss version='2.0' xmlns:geo='http://www.w3.org/2003/01/geo/wgs84_pos#' xmlns:dc='http://purl.org/dc/elements/1.1/'>"
