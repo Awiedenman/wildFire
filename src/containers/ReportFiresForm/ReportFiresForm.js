@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 // import { postUnverifiedFires } from '../../heplers/apiCalls/apiCalls';
 
 export class ReportFiresForm extends Component {
