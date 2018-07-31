@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { postUnverifiedFires } from '../../heplers/apiCalls/apiCalls';
 import { connect } from 'react-redux';
 import { addUnverifiedFire } from '../../actions/index';
+import { withRouter } from 'react-router-dom';
 
 export class ReportFiresForm extends Component {
   constructor(props){
@@ -23,10 +24,17 @@ export class ReportFiresForm extends Component {
     this.setState({[name]: value})
   }
 
-  handlePostUnverifiedFires = async (e) => {
-    e.preventDefault();
-    const unverifiedFiresFromDb = await postUnverifiedFires(this.state);
-    // this.props.addUnverifiedFire(unverifiedFiresFromDb)
+  handlePostUnverifiedFires = async (event) => {
+    console.log(this.props);
+    
+    event.preventDefault();
+    try {
+      const unverifiedFiresFromDb = await postUnverifiedFires(this.state);
+      this.props.addUnverifiedFire(unverifiedFiresFromDb)
+    } catch (error){
+      throw(`${error.status}`);
+    }
+      
   };
 
   render() {
@@ -113,4 +121,4 @@ export const mapDispatchToProps = dispatch => ({
   addUnverifiedFire: (unverifiedFiresFromDb) => dispatch(addUnverifiedFire(unverifiedFiresFromDb))
 })
 
-export default connect(null, mapDispatchToProps)(ReportFiresForm)
+export default withRouter(connect(null, mapDispatchToProps)(ReportFiresForm));
