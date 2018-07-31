@@ -12,8 +12,7 @@ describe('CurrentFires', () => {
         <CurrentFires 
           currentFires={mockCleanFireData}
         /> )
-      // const mockCurrentFires = mockCleanFireData
-      const mockMarker = {marker: 'A very nice marker'}
+
       const mockProps = {
         name: "416",
         image: undefined,
@@ -23,32 +22,32 @@ describe('CurrentFires', () => {
         longitude: "-107.8081"
       }
 
-      wrapper.instance().onMarkerClick();
+      wrapper.instance().onMarkerClick(mockProps);
 
       expect(wrapper.state('selectedPlace')).toEqual(mockProps);
-      expect(wrapper.state('activeMarker')).toEqual(mockMarker);
-      expect(wrapper.state('showInfoWindow')).toEqual(true);
-
+      expect(wrapper.state('showingInfoWindow')).toEqual(true);
     })
   })
 
   describe('onMapClicked', () => {
-    const wrapper = shallow(
-        <CurrentFires 
-          currentFires={mockCleanFireData}
-        />)
-
-    const mockProps = {};
-
-    const mockNewState = {
-      showingInfoWindow: false,
-      activeMarker: null
-    };
-
-    wrapper.instance().onMapClicked(mockProps);
-
-    expect(wrapper.state('showingInfoWindow')).toEqual(false);
-    expect(wrapper.state('activeMarker')).toEqual({});
+    test('should reset state when map is clicked off of infoWindow', () => {
+      const wrapper = shallow(
+          <CurrentFires 
+            currentFires={mockCleanFireData}
+          />)
+  
+      const mockProps = {};
+  
+      const mockNewState = {
+        showingInfoWindow: false,
+        activeMarker: null
+      };
+  
+      wrapper.instance().onMapClicked(mockProps);
+  
+      expect(wrapper.state('showingInfoWindow')).toEqual(false);
+      expect(wrapper.state('activeMarker')).toEqual({});   
+    }) 
   })
 
   describe('mapStateToProps', () => {

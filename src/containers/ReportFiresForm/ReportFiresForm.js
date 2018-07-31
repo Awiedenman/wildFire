@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { postUnverifiedFires } from '../../heplers/apiCalls/apiCalls';
+// import { postUnverifiedFires } from '../../heplers/apiCalls/apiCalls';
 
 export class ReportFiresForm extends Component {
   constructor(props){
@@ -95,7 +95,7 @@ export class ReportFiresForm extends Component {
               placeholder='Zip Code'
             />  
         </section>
-        <button onClick={postUnverifiedFires}>Submit</button>
+        {/* <button onClick={postUnverifiedFires}>Submit</button> */}
       </form>
     )
   }

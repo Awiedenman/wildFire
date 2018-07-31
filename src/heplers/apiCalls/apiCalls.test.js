@@ -9,15 +9,12 @@ describe('currentFireResponse', () => {
     window.fetch = jest.fn().mockImplementation(() => 
     Promise.resolve({
       ok: true,
-      text: () => ({mockXmlData})
+      text: () => Promise.resolve(mockXmlData)
     }))
-
-    // !what do I do here when it cam from xml?
 
     await currentFireRequest();
 
-    expect(window.fetch.ok).toEqual(true);
-    // expect(window.fetch).toHaveBeenCalledWith(url)
+    expect(window.fetch).toHaveBeenCalledWith(url)
   })
 
   test('should return an error if the repsonse status is bad', async () => {
@@ -31,8 +28,5 @@ describe('currentFireResponse', () => {
     const expected = Error('Couldn\'t retreive the current fires list');
 
     await expect(result).rejects.toEqual(expected);    
-  })
-  // test('should return an error if the fetch failed', () => {
-  //   window.fetch = jest.fn().mockImplementation(() => Promise.reject({}))
-  // }) 
+  }) 
 })

@@ -15,29 +15,29 @@ var convert = require('xml-js');
         return JSON.parse(jsonData) 
  }
 
- export const currentFireArticlesRequest = async () => {
-   const url = 'https://cors-anywhere.herokuapp.com/http://inciweb.nwcg.gov/feeds/rss/articles/';
-   try {
-     const xmlResponse = await fetch(url);
-     const currentFireArticlesXml = await xmlResponse.text();
-     var jsonData = convert.xml2json(
-       currentFireArticlesXml, {
-         compact: true,
-         spaces: 2
-       });
-     return jsonData
-   } catch (error) {
-     throw Error('Couldn\'t retreive the current fire')
-   }
- }
+//  export const currentFireArticlesRequest = async () => {
+//    const url = 'https://cors-anywhere.herokuapp.com/http://inciweb.nwcg.gov/feeds/rss/articles/';
+//    try {
+//      const xmlResponse = await fetch(url);
+//      const currentFireArticlesXml = await xmlResponse.text();
+//      var jsonData = convert.xml2json(
+//        currentFireArticlesXml, {
+//          compact: true,
+//          spaces: 2
+//        });
+//      return jsonData
+//    } catch (error) {
+//      throw Error('Couldn\'t retreive the current fire')
+//    }
+//  }
 
- export const postUnverifiedFires = async(unverifiedFire) => {
-  const url = 'https://localhost:3000/reportFires/api/unverifiedFires'
-  const postRequest = fetch(url, {
-    method: 'POST',
-    body: JSON.stringify(...unverifiedFire),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
- }
+//  export const postUnverifiedFires = async(unverifiedFire) => {
+//   const url = 'https://localhost:3000/reportFires/api/unverifiedFires'
+//   const postRequest = fetch(url, {
+//     method: 'POST',
+//     body: JSON.stringify(...unverifiedFire),
+//     headers: {
+//       'Content-Type': 'application/json'
+//     }
+//   })
+//  }

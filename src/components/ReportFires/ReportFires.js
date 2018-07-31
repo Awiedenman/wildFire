@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import CurrentFires from '../../containers/CurrentFires/CurrentFires';
-import { ReportFiresForm } from '../../containers/ReportFireForm/ReportFiresForm';
+import { ReportFiresForm } from '../../containers/ReportFiresForm/ReportFiresForm';
 
 import './ReportFires.css';
 
