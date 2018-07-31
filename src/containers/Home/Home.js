@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import CurrentFires from '../CurrentFires/CurrentFires';
 import { fireDataCleaner } from '../../heplers/cleaner/cleaner';
-import { currentFireRequest } from '../../heplers/apiCalls/apiCalls';
+import { currentFireRequest, getUnverifiedFires  } from '../../heplers/apiCalls/apiCalls';
 import { storeCurrentFireData } from '../../actions/index';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
@@ -16,35 +16,35 @@ export class Home extends Component {
   }
 
   async componentDidMount() { 
-    try{
+    try {
       // await this.setState({isLoading: true})
       const currentFireData = await currentFireRequest();
-      console.log('Data: ', currentFireData)
+      const firesFromDb = await getUnverifiedFires();
+      // console.log(firesFromDb);
       // await this.setState({isLoading: false});
       const cleanedCurrentFireData = fireDataCleaner(currentFireData);
-      this.props.storeCurrentFireData(cleanedCurrentFireData)
-      // return currentFireData
+      this.props.storeCurrentFireData(cleanedCurrentFireData, firesFromDb);
     } catch (error) {
-      throw Error(`Couldn\'t retreive the current fires list ${error.message}`)
+      throw Error(`Couldn\'t retreive the current fires list ${error.message}`);
     }
   }
   style = {
-        width: '100%',
-        height: '100%'
-      }
+    width: '100%',
+    height: '100%'
+  }
   render() {
-    return(
+    return (
       <div>
         <CurrentFires
           style = {this.style}/>
       </div>
-    )
+    );
   }
 }
 
 export const mapDispatchToProps = dispatch => ({
-  storeCurrentFireData: (cleanedCurrentFireData) => dispatch(storeCurrentFireData(cleanedCurrentFireData))
-})
+  storeCurrentFireData: (cleanedCurrentFireData, firesFromDb) => dispatch(storeCurrentFireData(cleanedCurrentFireData, firesFromDb))
+});
 
 export default withRouter(connect(null, mapDispatchToProps)(Home));
 

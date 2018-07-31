@@ -1,3 +1,4 @@
+/* eslint-disable */
 export const mockCleanFireData = [{
   name: "416",
   image: undefined,

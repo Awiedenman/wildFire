@@ -12,15 +12,12 @@ export class CurrentFires extends Component {
     this.state = {
       showingInfoWindow: false,
       activeMarker: {},
-      selectedPlace: {},
-    }
-    console.log(this.state.activeMarker)
-    console.log(this.state.selectedPlace)
-
+      selectedPlace: {}
+    };
   }
 
-  onMarkerClick = (props, marker, e) => {
-    console.log(props)
+  onMarkerClick = (props, marker) => {
+    console.log(props);
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
@@ -42,41 +39,41 @@ export class CurrentFires extends Component {
     // console.log(this.props.currentFires.length);
     const currentFireMarkers = this.props.currentFires.map(fire => {
       return <Marker
-              google={this.props.google}
-              title={fire.name}
-              name={`<a href='https://www.google.com/search?${fire.name}>fire.name</a>`}
-              acresBurned={fire.acresBurned}
-              lastUpdate={fire.lastUpdate}
-              // icon={{url: "../../images/fire.svg",
-                // anchor: new google.maps.Point(32,32),
-                // scaledSize: new google.maps.Size(64,64)
-                  // }}
-              onClick={this.onMarkerClick}
-              position={{lat: fire.latitude, lng: fire.longitude }}
-              key={fire.name} 
-             />
-    })
+        google={this.props.google}
+        title={fire.fire_name}
+        name={`<a href='https://www.google.com/search?${fire.fire_name}>fire.name</a>`}
+        acresBurned={fire.acres_burned}
+        lastUpdate={fire.last_update}
+        // icon={{url: "../../images/fire.svg",
+        // anchor: new google.maps.Point(32,32),
+        // scaledSize: new google.maps.Size(64,64)
+        // }}
+        onClick={this.onMarkerClick}
+        position={{lat: fire.latitude, lng: fire.longitude }}
+        key={fire.name} 
+      />;
+    });
 
     const initialCenter = {
       lat: 45,
       lng: -105
-    }
+    };
 
-// const mc = new MarkerClusterer(
-//   this.props.google.maps.Map(), // from new google.maps.Map();
-//   currentFireMarkers, // from const markers = locations.map()
-//   {
-//     styles: [{
-//       width: 40,
-//       height: 40,
-//       url: '/assets/icon-markercluster.png',
-//       textColor: 'white',
-//     }],
-//   },
-// );
+    // const mc = new MarkerClusterer(
+    //   this.props.google.maps.Map(), // from new google.maps.Map();
+    //   currentFireMarkers, // from const markers = locations.map()
+    //   {
+    //     styles: [{
+    //       width: 40,
+    //       height: 40,
+    //       url: '/assets/icon-markercluster.png',
+    //       textColor: 'white',
+    //     }],
+    //   },
+    // );
 
-      return(
-        <div className='map'>
+    return (
+      <div className='map'>
         <Map
           google={this.props.google} 
           style={this.props.style}
@@ -89,11 +86,11 @@ export class CurrentFires extends Component {
           onClick={this.onMapClicked}
           minZoom={3.4}
           maxZoom={14}
-          >
-        {currentFireMarkers}
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}>
+        >
+          {currentFireMarkers}
+          <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showingInfoWindow}>
             <div>
               <h1>{this.state.selectedPlace.name}</h1>
               <h3>Current Burn: {this.state.selectedPlace.acresBurned}</h3>
