@@ -4,11 +4,17 @@
 
 .header {
   position: relative;
-  background-image: url('../../images/funky-lines.png');
-  /* background-repeat: repeat; */
-  height: 9rem;
+  background-image: url('../../images/trees.jpg');
+  background-repeat: repeat;
+  background-position: top;
+  background-size: 300px 190px;
+  height: 152px;
   color: #000;
+}
+.layer {
+  background-color: rgba(230, 221, 221, 0.863);
   border-bottom: 0.5rem double #052709;
+  height: 144px;
 }
 
 .main-title {
@@ -17,22 +23,28 @@
   right: 30px;
   top: 1.9rem;
   font-size: 5rem;
-  color: #052709;
+  color: #435245;
   padding-bottom: 2rem;
 }
 
 .header-navLinks {
-padding: 5rem;
+  padding: 82px;
 }
 
 a {
-  padding-right: 1rem;
+  /* padding: 3px; */
   text-decoration: none;
   color: #052709;
   font-size: 1.5rem;
+  margin: 15px;
 }
 
 a:hover {
-  color: #54855A;
-  border-bottom: .1rem solid #54855A;
+  color: rgba(255, 72, 0, 0.63);
+  border-bottom: .1rem solid rgba(107, 69, 18, 0.767);
+  font-weight: bolder;
+}
+
+.fire {
+  color: rgba(255, 72, 0, 0.63);
 }

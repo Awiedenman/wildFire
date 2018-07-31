@@ -15,7 +15,7 @@ export class CurrentFires extends Component {
       selectedPlace: {},
     }
   }
-  
+
   onMarkerClick = (props, marker, e) => {
     console.log(props)
     this.setState({
@@ -40,7 +40,7 @@ export class CurrentFires extends Component {
       return <Marker
               google={this.props.google}
               title={fire.name}
-              name={fire.name}
+              name={`<a href='https://www.google.com/search?${fire.name}>fire.name</a>`}
               acresBurned={fire.acresBurned}
               lastUpdate={fire.lastUpdate}
               // icon={{url: "../../images/fire.svg",

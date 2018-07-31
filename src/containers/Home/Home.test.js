@@ -8,25 +8,25 @@ import { mockCleanFireData } from '../../MockData/mockCleanFireData';
 import { mockParsedFireData } from '../../MockData/mockParsedFireData';
 
 jest.mock('../../heplers/apiCalls/apiCalls', () => ({
-  currentFireRequest: jest.fn().mockImplementation(() => JSON.stringify(mockParsedFireData))
+  currentFireRequest: jest.fn().mockImplementation(() => Promise.resolve(mockParsedFireData))
 }))
 
 describe('Home', () => {
   let wrapper;
   const mockStoreCurrentFireData = jest.fn(); 
 
-  // describe('componentDidMount', () => {
-  //   wrapper = shallow(
-  //   <Home
-  //     storeCurrentFireData = {mockStoreCurrentFireData}
-  //   />)
+  describe('componentDidMount', () => {
+    beforeEach(()=> {
+      wrapper = shallow(
+      <Home
+        storeCurrentFireData = {mockStoreCurrentFireData}
+      />)
+    })
 
-  //   // console.log(wrapper)
-
-  //   test('should fetch initial fire data on page load', async () => {
-  //     await expect(mockStoreCurrentFireData).toHaveBeenCalled();
-  //   })
-  // })
+    test.only('should fetch initial fire data on page load', async () => {
+      await expect(mockStoreCurrentFireData).toHaveBeenCalled();
+    })
+  })
   
   describe('mapDispatchToProps', () => {
     test('should call dispatch when storeCurrentFireData is called', () => {
@@ -46,3 +46,4 @@ describe('Home', () => {
     expect(wrapper).toMatchSnapshot();
   })
 })
+

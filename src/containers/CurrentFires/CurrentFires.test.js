@@ -5,7 +5,7 @@ import { CurrentFires, mapStateToProps } from './CurrentFires';
 
 describe('CurrentFires', () => {
 
-  describe.skip('onMarkerClick', () => {
+  describe('onMarkerClick', () => {
     test('should set the state ', () => {
     
   })

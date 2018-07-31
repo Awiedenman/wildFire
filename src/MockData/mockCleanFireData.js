@@ -1,8 +1,8 @@
 export const mockCleanFireData = [{
-  name: "Webber Creek",
-  image: "Webber Creek.png",
-  acresBurned: " 6350.7 acres",
-  lastUpdate: " 7/19/2018 10:30:00 PM",
-  latitude: "65.36033",
-  longitude: "-143.53233"
+  name: "416",
+  image: undefined,
+  acresBurned: " 54129 acres",
+  lastUpdate: " 7/24/2018 10:15:00 PM",
+  latitude: "37.4605800000001",
+  longitude: "-107.8081"
 }]

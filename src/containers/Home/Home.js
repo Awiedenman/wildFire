@@ -10,17 +10,17 @@ import { withRouter } from 'react-router-dom';
 export class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isLoading: false
-    }
+    // this.state = {
+    //   isLoading: false
+    // }
   }
 
   async componentDidMount() { 
     try{
-      await this.setState({isLoading: true}) 
+      // await this.setState({isLoading: true})
       const currentFireData = await currentFireRequest();
-      console.log(currentFireData)
-      await this.setState({isLoading: false});
+      console.log('Data: ', currentFireData)
+      // await this.setState({isLoading: false});
       const cleanedCurrentFireData = fireDataCleaner(currentFireData);
       this.props.storeCurrentFireData(cleanedCurrentFireData)
       // return currentFireData

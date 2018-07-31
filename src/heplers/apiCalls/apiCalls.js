@@ -4,6 +4,7 @@ var convert = require('xml-js');
    const url = 'https://cors-anywhere.herokuapp.com/https://www.geomac.gov/DynContent/georss/nifc_large_firesW3C.xml';
      const xmlResponse = await fetch(url);
      const currentFireDataXml = await xmlResponse.text();
+    //  console.log(currentFireDataXml);
      var jsonData = convert.xml2json(
        currentFireDataXml, {
          compact: true,

@@ -1,6 +1,6 @@
 import { fireDataCleaner } from './cleaner';
-import { mockCleanFireData, mockParsedFireData } from '../../MockData/mockCleanFireData';
-
+import { mockCleanFireData } from '../../MockData/mockCleanFireData';
+import { mockParsedFireData } from '../../MockData/mockParsedFireData';
 
 describe('cleaner', () => {
   test('should clean the data', () => {
