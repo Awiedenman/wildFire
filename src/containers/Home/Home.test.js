@@ -23,7 +23,7 @@ describe('Home', () => {
       />)
     })
 
-    test.only('should fetch initial fire data on page load', async () => {
+    test('should fetch initial fire data on page load', async () => {
       await expect(mockStoreCurrentFireData).toHaveBeenCalled();
     })
   })

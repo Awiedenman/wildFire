@@ -41,7 +41,7 @@ button:hover {
 
 input {
   border: none;
-  border-bottom: 1px solid #232323;
+  border-bottom: 1px solid #000;
   margin: 5px;
   background-color: transparent;
   color: #232323;
@@ -50,7 +50,8 @@ input {
 
 input:hover {
   border: none;
-  border-bottom: 3px solid #000;
+  border-bottom: 3px solid #052709;
+  margin-bottom: 3px;
 }
 
 input::placeholder {
@@ -59,4 +60,5 @@ input::placeholder {
 
 h3 {
   padding: 10px;
+  color: #052709;
 }

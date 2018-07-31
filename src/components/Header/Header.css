@@ -3,7 +3,9 @@
 }
 
 .header {
-  position: relative;
+  /* position: relative; */
+  display: flex;
+  /* flex-direction: row; */
   background-image: url('../../images/trees.jpg');
   background-repeat: repeat;
   background-position: top;
@@ -12,27 +14,30 @@
   color: #000;
 }
 .layer {
+  display: flex;
+  justify-content: space-around;
   background-color: rgba(230, 221, 221, 0.863);
   border-bottom: 0.5rem double #052709;
   height: 144px;
+  width: 100vw;
 }
 
 .main-title {
-  /* padding: 30px; */
-  position: absolute;
-  right: 30px;
-  top: 1.9rem;
+  /* position: absolute; */
+  /* right: 30px;
+  top: 1.7rem; */
   font-size: 5rem;
   color: #435245;
-  padding-bottom: 2rem;
+  padding-top: 1rem;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .header-navLinks {
+  /* display: inline-block; */
   padding: 82px;
 }
 
 a {
-  /* padding: 3px; */
   text-decoration: none;
   color: #052709;
   font-size: 1.5rem;
@@ -48,4 +53,32 @@ a:hover {
 
 .fire {
   color: rgba(255, 72, 0, 0.63);
+}
+
+@media screen and (max-width: 1100px) {
+  .layer{
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    /* background-image: none; */
+  }
+
+  .main-title {
+    position: inline;
+    /* right: 30px;
+    top: 1.7rem; */
+    /* font-size: 5rem;
+    color: #435245; */
+    padding-bottom: 2rem;
+    /* font-family: 'Open Sans', sans-serif; */
+  }
+
+  .main-title {
+    padding: 0;
+  }
+
+  .header-navLinks {
+    /* display: inline-block; */
+    padding: 0 0 5px 0;
+  }
 }

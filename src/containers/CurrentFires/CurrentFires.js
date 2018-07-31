@@ -14,6 +14,9 @@ export class CurrentFires extends Component {
       activeMarker: {},
       selectedPlace: {},
     }
+    console.log(this.state.activeMarker)
+    console.log(this.state.selectedPlace)
+
   }
 
   onMarkerClick = (props, marker, e) => {
@@ -26,6 +29,7 @@ export class CurrentFires extends Component {
   }
  
   onMapClicked = (props) => {
+    console.log(props); 
     if (this.state.showingInfoWindow) {
       this.setState({
         showingInfoWindow: false,
@@ -35,7 +39,7 @@ export class CurrentFires extends Component {
   };
 
   render() {
-    console.log(this.props.currentFires.length);
+    // console.log(this.props.currentFires.length);
     const currentFireMarkers = this.props.currentFires.map(fire => {
       return <Marker
               google={this.props.google}
