@@ -1,23 +1,27 @@
 import React, { Component } from 'react'
+import CurrentFires from '../../containers/CurrentFires/CurrentFires';
+import { ReportFiresForm } from '../../containers/ReportFireForm/ReportFiresForm';
+
+import './ReportFires.css';
 
 export class ReportFires extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      location: ''
-    }
-  }
-
-  handleChange = (e) =>{
-    const { value } =e.target;
-    this.setState({location: value})
-  }
-
   render(){
+    const style = {
+          width: '100%',
+          height: '100%'
+        }
+  
     return(
-      <form>
-        <input onChange={this.handleChange} name='location' value={this.state.location}/>
-      </form>
+      <div className='reportFires'>
+        <div className='reportFires-map'>
+          <CurrentFires
+            style={style}/>
+          <button className='map-submit'>Submit</button>
+        </div>
+        <div className='reportFires-form'>
+          <ReportFiresForm />
+        </div>
+      </div>
     )
   }
 }

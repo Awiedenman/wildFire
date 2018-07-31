@@ -14,9 +14,13 @@ export class CurrentFires extends Component {
       activeMarker: {},
       selectedPlace: {},
     }
+    console.log(this.state.activeMarker)
+    console.log(this.state.selectedPlace)
+
   }
-  
+
   onMarkerClick = (props, marker, e) => {
+    console.log(props)
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
@@ -25,6 +29,7 @@ export class CurrentFires extends Component {
   }
  
   onMapClicked = (props) => {
+    console.log(props); 
     if (this.state.showingInfoWindow) {
       this.setState({
         showingInfoWindow: false,
@@ -34,17 +39,17 @@ export class CurrentFires extends Component {
   };
 
   render() {
-    console.log(this.props.currentFires.length);
+    // console.log(this.props.currentFires.length);
     const currentFireMarkers = this.props.currentFires.map(fire => {
       return <Marker
               google={this.props.google}
               title={fire.name}
-              name={fire.name}
+              name={`<a href='https://www.google.com/search?${fire.name}>fire.name</a>`}
               acresBurned={fire.acresBurned}
               lastUpdate={fire.lastUpdate}
               // icon={{url: "../../images/fire.svg",
-              //   anchor: new google.maps.Point(32,32),
-              //   scaledSize: new google.maps.Size(64,64)
+                // anchor: new google.maps.Point(32,32),
+                // scaledSize: new google.maps.Size(64,64)
                   // }}
               onClick={this.onMarkerClick}
               position={{lat: fire.latitude, lng: fire.longitude }}
@@ -54,7 +59,7 @@ export class CurrentFires extends Component {
 
     const initialCenter = {
       lat: 45,
-      lng: -75
+      lng: -105
     }
 
 // const mc = new MarkerClusterer(

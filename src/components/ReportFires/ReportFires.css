@@ -1,0 +1,64 @@
+h3 {
+  font-size: 1rem;
+}
+
+.reportFires-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+  height: 80vh;
+}
+
+.reportFire-form-section {
+  text-align: center;
+  padding: 10px;
+  margin: 25px;
+}
+
+form {
+  position: absolute;
+  left: 0;
+  top: 9.5rem;
+  text-align: center;
+  background-color: rgba(250, 250, 250, 0.806);
+  height: 100vh;
+  width: 18rem;
+  overflow-y: scroll;
+  border-right: 2px solid rgba(153, 149, 149, 0.835);
+}
+
+button {
+  width: 5rem;
+  border: 1px #000 ridge;
+  border-radius: .2rem;
+  box-shadow: 1px 1px 1px
+
+}
+button:hover {
+  background-color: aquamarine;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #000;
+  margin: 5px;
+  background-color: transparent;
+  color: #232323;
+  font-size: 1rem;
+}
+
+input:hover {
+  border: none;
+  border-bottom: 3px solid #052709;
+  margin-bottom: 3px;
+}
+
+input::placeholder {
+  color: #232323;
+}
+
+h3 {
+  padding: 10px;
+  color: #052709;
+}

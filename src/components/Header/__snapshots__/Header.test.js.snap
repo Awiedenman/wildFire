@@ -17,11 +17,49 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <h1
-        className="main-title"
+      "children": <div
+        className="layer"
 >
-         WildFire USA 
-</h1>,
+        <div
+                className="header-left"
+        >
+                <div
+                        className="header-navLinks"
+                >
+                        <NavLink
+                                activeClassName="active"
+                                aria-current="page"
+                                exact={true}
+                                to="/"
+                        >
+                                Current Fires
+                        </NavLink>
+                        <NavLink
+                                activeClassName="active"
+                                aria-current="page"
+                                exact={true}
+                                to="/reportFires"
+                        >
+                                Report a Fire
+                        </NavLink>
+                </div>
+        </div>
+        <div
+                className="header-right"
+        >
+                <h1
+                        className="main-title"
+                >
+                         Wild
+                        <span
+                                className="fire"
+                        >
+                                Fire
+                        </span>
+                        Watch 
+                </h1>
+        </div>
+</div>,
       "className": "header",
     },
     "ref": null,
@@ -30,12 +68,199 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": " WildFire USA ",
-        "className": "main-title",
+        "children": Array [
+          <div
+            className="header-left"
+>
+            <div
+                        className="header-navLinks"
+            >
+                        <NavLink
+                                    activeClassName="active"
+                                    aria-current="page"
+                                    exact={true}
+                                    to="/"
+                        >
+                                    Current Fires
+                        </NavLink>
+                        <NavLink
+                                    activeClassName="active"
+                                    aria-current="page"
+                                    exact={true}
+                                    to="/reportFires"
+                        >
+                                    Report a Fire
+                        </NavLink>
+            </div>
+</div>,
+          <div
+            className="header-right"
+>
+            <h1
+                        className="main-title"
+            >
+                         Wild
+                        <span
+                                    className="fire"
+                        >
+                                    Fire
+                        </span>
+                        Watch 
+            </h1>
+</div>,
+        ],
+        "className": "layer",
       },
       "ref": null,
-      "rendered": " WildFire USA ",
-      "type": "h1",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="header-navLinks"
+>
+              <NavLink
+                            activeClassName="active"
+                            aria-current="page"
+                            exact={true}
+                            to="/"
+              >
+                            Current Fires
+              </NavLink>
+              <NavLink
+                            activeClassName="active"
+                            aria-current="page"
+                            exact={true}
+                            to="/reportFires"
+              >
+                            Report a Fire
+              </NavLink>
+</div>,
+            "className": "header-left",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <NavLink
+                  activeClassName="active"
+                  aria-current="page"
+                  exact={true}
+                  to="/"
+>
+                  Current Fires
+</NavLink>,
+                <NavLink
+                  activeClassName="active"
+                  aria-current="page"
+                  exact={true}
+                  to="/reportFires"
+>
+                  Report a Fire
+</NavLink>,
+              ],
+              "className": "header-navLinks",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "aria-current": "page",
+                  "children": "Current Fires",
+                  "exact": true,
+                  "to": "/",
+                },
+                "ref": null,
+                "rendered": "Current Fires",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "aria-current": "page",
+                  "children": "Report a Fire",
+                  "exact": true,
+                  "to": "/reportFires",
+                },
+                "ref": null,
+                "rendered": "Report a Fire",
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <h1
+              className="main-title"
+>
+               Wild
+              <span
+                            className="fire"
+              >
+                            Fire
+              </span>
+              Watch 
+</h1>,
+            "className": "header-right",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                " Wild",
+                <span
+                  className="fire"
+>
+                  Fire
+</span>,
+                "Watch ",
+              ],
+              "className": "main-title",
+            },
+            "ref": null,
+            "rendered": Array [
+              " Wild",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Fire",
+                  "className": "fire",
+                },
+                "ref": null,
+                "rendered": "Fire",
+                "type": "span",
+              },
+              "Watch ",
+            ],
+            "type": "h1",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "div",
     },
     "type": "div",
   },
@@ -45,11 +270,49 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <h1
-          className="main-title"
+        "children": <div
+          className="layer"
 >
-           WildFire USA 
-</h1>,
+          <div
+                    className="header-left"
+          >
+                    <div
+                              className="header-navLinks"
+                    >
+                              <NavLink
+                                        activeClassName="active"
+                                        aria-current="page"
+                                        exact={true}
+                                        to="/"
+                              >
+                                        Current Fires
+                              </NavLink>
+                              <NavLink
+                                        activeClassName="active"
+                                        aria-current="page"
+                                        exact={true}
+                                        to="/reportFires"
+                              >
+                                        Report a Fire
+                              </NavLink>
+                    </div>
+          </div>
+          <div
+                    className="header-right"
+          >
+                    <h1
+                              className="main-title"
+                    >
+                               Wild
+                              <span
+                                        className="fire"
+                              >
+                                        Fire
+                              </span>
+                              Watch 
+                    </h1>
+          </div>
+</div>,
         "className": "header",
       },
       "ref": null,
@@ -58,12 +321,199 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": " WildFire USA ",
-          "className": "main-title",
+          "children": Array [
+            <div
+              className="header-left"
+>
+              <div
+                            className="header-navLinks"
+              >
+                            <NavLink
+                                          activeClassName="active"
+                                          aria-current="page"
+                                          exact={true}
+                                          to="/"
+                            >
+                                          Current Fires
+                            </NavLink>
+                            <NavLink
+                                          activeClassName="active"
+                                          aria-current="page"
+                                          exact={true}
+                                          to="/reportFires"
+                            >
+                                          Report a Fire
+                            </NavLink>
+              </div>
+</div>,
+            <div
+              className="header-right"
+>
+              <h1
+                            className="main-title"
+              >
+                             Wild
+                            <span
+                                          className="fire"
+                            >
+                                          Fire
+                            </span>
+                            Watch 
+              </h1>
+</div>,
+          ],
+          "className": "layer",
         },
         "ref": null,
-        "rendered": " WildFire USA ",
-        "type": "h1",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <div
+                className="header-navLinks"
+>
+                <NavLink
+                                activeClassName="active"
+                                aria-current="page"
+                                exact={true}
+                                to="/"
+                >
+                                Current Fires
+                </NavLink>
+                <NavLink
+                                activeClassName="active"
+                                aria-current="page"
+                                exact={true}
+                                to="/reportFires"
+                >
+                                Report a Fire
+                </NavLink>
+</div>,
+              "className": "header-left",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <NavLink
+                    activeClassName="active"
+                    aria-current="page"
+                    exact={true}
+                    to="/"
+>
+                    Current Fires
+</NavLink>,
+                  <NavLink
+                    activeClassName="active"
+                    aria-current="page"
+                    exact={true}
+                    to="/reportFires"
+>
+                    Report a Fire
+</NavLink>,
+                ],
+                "className": "header-navLinks",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "activeClassName": "active",
+                    "aria-current": "page",
+                    "children": "Current Fires",
+                    "exact": true,
+                    "to": "/",
+                  },
+                  "ref": null,
+                  "rendered": "Current Fires",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "activeClassName": "active",
+                    "aria-current": "page",
+                    "children": "Report a Fire",
+                    "exact": true,
+                    "to": "/reportFires",
+                  },
+                  "ref": null,
+                  "rendered": "Report a Fire",
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <h1
+                className="main-title"
+>
+                 Wild
+                <span
+                                className="fire"
+                >
+                                Fire
+                </span>
+                Watch 
+</h1>,
+              "className": "header-right",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  " Wild",
+                  <span
+                    className="fire"
+>
+                    Fire
+</span>,
+                  "Watch ",
+                ],
+                "className": "main-title",
+              },
+              "ref": null,
+              "rendered": Array [
+                " Wild",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Fire",
+                    "className": "fire",
+                  },
+                  "ref": null,
+                  "rendered": "Fire",
+                  "type": "span",
+                },
+                "Watch ",
+              ],
+              "type": "h1",
+            },
+            "type": "div",
+          },
+        ],
+        "type": "div",
       },
       "type": "div",
     },
