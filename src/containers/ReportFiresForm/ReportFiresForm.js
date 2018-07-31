@@ -26,7 +26,8 @@ export class ReportFiresForm extends Component {
   handlePostUnverifiedFires = async (e) => {
     e.preventDefault();
     const unverifiedFiresFromDb = await postUnverifiedFires(this.state);
-  }
+    // this.props.addUnverifiedFire(unverifiedFiresFromDb)
+  };
 
   render() {
     return (

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { apiKey } from '../../api-key';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 import { connect } from 'react-redux';
-import MarkerClusterer from 'node-js-marker-clusterer';
+// import MarkerClusterer from 'node-js-marker-clusterer';
 
 import './CurrentFires.css';
 
@@ -36,11 +36,11 @@ export class CurrentFires extends Component {
   };
 
   render() {
-    // console.log(this.props.currentFires.length);
     const currentFireMarkers = this.props.currentFires.map(fire => {
+      console.log(fire.latitude, fire.longitude);
       return <Marker
         google={this.props.google}
-        title={fire.fire_name}
+        title={fire.fire_name ? fire.fire_name : fire.last_name}
         name={`<a href='https://www.google.com/search?${fire.fire_name}>fire.name</a>`}
         acresBurned={fire.acres_burned}
         lastUpdate={fire.last_update}
@@ -50,7 +50,7 @@ export class CurrentFires extends Component {
         // }}
         onClick={this.onMarkerClick}
         position={{lat: fire.latitude, lng: fire.longitude }}
-        key={fire.name} 
+        key={fire.fire_name} 
       />;
     });
 
@@ -99,13 +99,13 @@ export class CurrentFires extends Component {
           </InfoWindow>
         </Map>
       </div>
-    )
+    );
   }
 }
 
 export const mapStateToProps = (state) => ({
   currentFires: state.currentFires
-})
+});
 
 const googleWrapper = GoogleApiWrapper({ apiKey: apiKey })(CurrentFires)
 
