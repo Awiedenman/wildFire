@@ -44,8 +44,8 @@ export class CurrentFires extends Component {
               acresBurned={fire.acresBurned}
               lastUpdate={fire.lastUpdate}
               // icon={{url: "../../images/fire.svg",
-              //   anchor: new google.maps.Point(32,32),
-              //   scaledSize: new google.maps.Size(64,64)
+                // anchor: new google.maps.Point(32,32),
+                // scaledSize: new google.maps.Size(64,64)
                   // }}
               onClick={this.onMarkerClick}
               position={{lat: fire.latitude, lng: fire.longitude }}

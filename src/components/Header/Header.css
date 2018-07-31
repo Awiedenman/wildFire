@@ -43,6 +43,7 @@ a:hover {
   color: rgba(255, 72, 0, 0.63);
   border-bottom: .1rem solid rgba(107, 69, 18, 0.767);
   font-weight: bolder;
+  margin: 9.58px;
 }
 
 .fire {
