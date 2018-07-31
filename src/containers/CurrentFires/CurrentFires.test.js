@@ -45,10 +45,10 @@ describe('CurrentFires', () => {
       activeMarker: null
     };
 
-    wrapper.instance().onMapClicked();
+    wrapper.instance().onMapClicked(mockProps);
 
-    expect(wrapper.state('showInfoWindow')).toEqual(false);
-    expect(wrapper.state('activeMarker')).toEqual(null);
+    expect(wrapper.state('showingInfoWindow')).toEqual(false);
+    expect(wrapper.state('activeMarker')).toEqual({});
   })
 
   describe('mapStateToProps', () => {
