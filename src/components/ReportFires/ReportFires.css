@@ -13,7 +13,7 @@ h3 {
 .reportFire-form-section {
   text-align: center;
   padding: 10px;
-  margin: 25px;
+  margin: 25px 0 0;
 }
 
 form {
@@ -23,7 +23,7 @@ form {
   text-align: center;
   background-color: rgba(250, 250, 250, 0.806);
   height: 100vh;
-  width: 18rem;
+  width: 14rem;
   overflow-y: scroll;
   border-right: 2px solid rgba(153, 149, 149, 0.835);
 }

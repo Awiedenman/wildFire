@@ -43,6 +43,18 @@ describe('getUnverifiedFires', () => {
 
     expect(window.fetch).toHaveBeenCalledWith(mockUrl);
   });
+
+  test.skip('should return an error if the repsonse status is bad', async () => {
+    window.fetch = jest.fn().mockImplementation(() =>
+      Promise.resolve({
+        ok: false,
+        json: () => Promise.reject()
+      }));
+
+    const expected = Error('Sorry, there was problem retreiving unverified fires. Please try again later.');
+
+    await expect(getUnverifiedFires()).rejects.toEqual(expected);
+  });
 })
 
 describe('postUnverifiedFires', () => {

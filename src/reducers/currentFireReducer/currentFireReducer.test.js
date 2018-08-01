@@ -10,7 +10,7 @@ describe('currentFireReducer', () => {
     expect(result).toEqual(expected);
   });
 
-  test.skip('should return state with currentFire information', () => {
+  test.skip('should return state with currentFire information if storeCurrentFireData is called', () => {
     const mockFiresFromDb = [{
       id: 10,
       first_name: "",
@@ -35,7 +35,7 @@ describe('currentFireReducer', () => {
     expect(result).toEqual(expected);
   });
 
-  test('should return the state containing the new addition to the fires', () => {
+  test('should return the state containing the new addition to the fires when addUnverifiedFire is called', () => {
     const expected = [
       ...mockCleanFireData, 
       { id: 10,

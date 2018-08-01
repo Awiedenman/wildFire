@@ -30,7 +30,7 @@ describe('actions', () => {
       verified: false,
       created_at: "2018-07-31T23:04:57.695Z",
       updated_at: "2018-07-31T23:04:57.695Z"
-    }
+    };
     const expectedAction = {
       type: 'ADD_UNVERIFIED_FIRE',
       unverifiedFiresFromDb: mockPayload
