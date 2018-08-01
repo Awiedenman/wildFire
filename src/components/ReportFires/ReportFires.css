@@ -33,10 +33,12 @@ button {
   border: 1px #000 ridge;
   border-radius: .2rem;
   box-shadow: 1px 1px 1px
+
 }
 
 button:hover {
-  background-color: aquamarine;
+  background-color : rgba(255, 72, 0, 0.438);
+  font-family: 'Open Sans', sans-serif;
 }
 
 input {
@@ -61,7 +63,27 @@ input::placeholder {
   color: #232323;
 }
 
+.form-fire-logo {
+  position: relative;
+  left: 80px;
+  top: 10px;
+  background-image: url('../../images/no-fire.svg');
+  height: 70px;
+  width: 70px;
+}
+
+h2 {
+  padding-top: 20px;
+}
+
 h3 {
+  position: relative;
   padding: 10px;
   color: #052709;
+}
+
+.star {
+  position: absolute;
+  top: 16px;
+  left: 64px;
 }

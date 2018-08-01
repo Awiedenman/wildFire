@@ -47,8 +47,9 @@ export class ReportFiresForm extends Component {
   render() {
     return (
       <form>
+        <div className='form-fire-logo'></div>
+        <h2>Report a Fire</h2>
         <section className='reportFire-form-section'>
-          <h3>Name</h3>
           <label for="name"></label>
           <input 
             onChange={this.handleChange} 
@@ -68,7 +69,7 @@ export class ReportFiresForm extends Component {
         </section>
         <br />
         <section className='reportFire-form-section'>
-          <h3>(Required)</h3>
+          <h3><span className='star'>*</span>Required</h3>
           <label for="latitude"></label>
           <input 
             onChange={this.handleChange} 
@@ -91,9 +92,8 @@ export class ReportFiresForm extends Component {
         <br />
         <section className='reportFire-form-section'>
           <label for="city"></label>
-          <h3>Location</h3>
           <br/>
-          <h3>(optional)</h3>
+          <h3><span className='star'>*</span> optional</h3>
           <input 
             onChange={this.handleChange} 
             name='city' 
