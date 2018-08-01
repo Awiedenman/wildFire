@@ -1,3 +1,5 @@
+WildFire Watch is a react/ redux application that fetches USGS data to display current wildfires.  Users can view current fires ont he Current Fires page, or report a fire by filling out and submitting a fire to teh page. The reported fire is posted to a express/postgres backend and saves the fire as unverified on the page.
+
 <img src='https://github.com/Awiedenman/wildFire/blob/master/screen-shot1.png' />
 <img src='https://github.com/Awiedenman/wildFire/blob/master/screen-shot2.png' />
 
