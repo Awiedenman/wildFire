@@ -1,3 +1,6 @@
+![Favorites page](./wildFire/src/images/screen-shot1)
+![Favorites page](./wildFire/src/images/screen-shot2)
+
 # colorado-fire
 - [x]  Figure out how to convert xml to JSON
 - [x] Create wire frames
