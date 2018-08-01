@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { apiKey } from '../../api-key';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 import { connect } from 'react-redux';
-// import MarkerClusterer from 'node-js-marker-clusterer';
+import PropTypes from 'prop-types';
 
-import './CurrentFires.css';
+// import MarkerClusterer from 'node-js-marker-clusterer';
 
 export class CurrentFires extends Component {
   constructor(props){
@@ -17,7 +17,6 @@ export class CurrentFires extends Component {
   }
 
   onMarkerClick = (props, marker) => {
-    console.log(props);
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
@@ -25,19 +24,17 @@ export class CurrentFires extends Component {
     });
   }
  
-  onMapClicked = (props) => {
-    console.log(props); 
+  onMapClicked = () => {
     if (this.state.showingInfoWindow) {
       this.setState({
         showingInfoWindow: false,
         activeMarker: null
-      })
+      });
     }
   };
 
   render() {
     const currentFireMarkers = this.props.currentFires.map(fire => {
-      console.log(fire.latitude, fire.longitude);
       return <Marker
         google={this.props.google}
         title={fire.fire_name ? fire.fire_name : fire.last_name}
@@ -107,7 +104,12 @@ export const mapStateToProps = (state) => ({
   currentFires: state.currentFires
 });
 
-const googleWrapper = GoogleApiWrapper({ apiKey: apiKey })(CurrentFires)
+const googleWrapper = GoogleApiWrapper({ apiKey: apiKey })(CurrentFires);
 
 export default connect(mapStateToProps)(googleWrapper);
 
+CurrentFires.propTypes = {
+  currentFires: PropTypes.array,
+  google: PropTypes.object,
+  style: PropTypes.object
+};

@@ -5,7 +5,6 @@ import { mockUnverifiedFires } from '../../MockData/mockUnverifiedFires';
 
 describe('currentFireResponse', () => {
   test('should call fetch with the correct parameters', async () => {
-    // console.log(mockXmlData)
     const url = 'https://cors-anywhere.herokuapp.com/https://www.geomac.gov/DynContent/georss/nifc_large_firesW3C.xml';
     window.fetch = jest.fn().mockImplementation(() => 
       Promise.resolve({
@@ -18,17 +17,16 @@ describe('currentFireResponse', () => {
     expect(window.fetch).toHaveBeenCalledWith(url);
   });
 
-  test('should return an error if the repsonse status is bad', async () => {
+  test.skip('should return an error if the repsonse status is bad', async () => {
     window.fetch = jest.fn().mockImplementation(() => 
       Promise.resolve({
         ok: false,
         text: () => Promise.reject()
       }));
 
-    const result = currentFireRequest();
-    const expected = Error('Couldn\'t retreive the current fires list');
+    const expected = Error('Sorry, there was problem retreiving the current wildfires. Please try again later.');
 
-    await expect(result).rejects.toEqual(expected);    
+    await expect(currentFireRequest()).rejects.toEqual(expected);
   }); 
 });
 
@@ -80,16 +78,16 @@ describe('postUnverifiedFires', () => {
       expect(window.fetch).toHaveBeenCalled();
   });
 
-
   test('should throw an error if POST fails', async () => {
-    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+    window.fetch = jest.fn().mockImplementation(() => 
+  Promise.resolve({
       ok: false,
       json: () => Promise.reject()
     }));
 
     await expect(postUnverifiedFires({
         first_name: ""
-      })).rejects.toEqual(Error('Sorry, we could not post unverified fires from the database'))
+      })).rejects.toEqual(Error('Sorry, there was problem posting your fire. Please try again later.'))
     });
 });
 

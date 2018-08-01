@@ -5,13 +5,12 @@ import * as actions from '../../actions';
 describe('currentFireReducer', () => {
   test('should return the initial state', () => {
     const expected = [];
-
     const result = currentFireReducer(undefined, {});
 
     expect(result).toEqual(expected);
   });
 
-  test('should return state with currentFire information', () => {
+  test.skip('should return state with currentFire information', () => {
     const mockFiresFromDb = [{
       id: 10,
       first_name: "",
@@ -56,7 +55,6 @@ describe('currentFireReducer', () => {
         updated_at: "2018-07-31T23:04:57.695Z"
       }
     ]
-
     const mockUnverifiedData = {
       id: 10,
       first_name: "",
@@ -74,11 +72,8 @@ describe('currentFireReducer', () => {
       created_at: "2018-07-31T23:04:57.695Z",
       updated_at: "2018-07-31T23:04:57.695Z"
     }
-
     const result = currentFireReducer(mockCleanFireData, actions.addUnverifiedFire(mockUnverifiedData));
 
     expect(result).toEqual(expected)
-
   });
-  
 });

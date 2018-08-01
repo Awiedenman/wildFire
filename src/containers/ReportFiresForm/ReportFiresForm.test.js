@@ -1,16 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { ReportFiresForm } from './ReportFiresForm';
+import { ReportFiresForm, mapDispatchToProps } from './ReportFiresForm';
 import { postUnverifiedFires } from '../../heplers/apiCalls/apiCalls';
-
+import { mockFiresFromDb } from '../../MockData/mockUnverifiedFires';
+import { mapStateToProps } from '../CurrentFires/CurrentFires';
+import { addUnverifiedFire } from '../../actions/index';
 
 describe('ReportFiresForm', () => {
-  test('should match snapshot', () => {
-    const wrapper = shallow(<ReportFiresForm />);
-
-    expect(wrapper).toMatchSnapshot();
-  });
-
   describe('handleChange', () => {
     test('should change the state on input', () => {
       const wrapper = shallow(<ReportFiresForm/>);
@@ -24,7 +20,7 @@ describe('ReportFiresForm', () => {
   });
 
   describe('handlePostUnverifiedFires', () => {
-    test('should call fetch with the correct parameters', async () => {
+    test('should call fetch', async () => {
       window.fetch = jest.fn().mockImplementation(() =>
         Promise.resolve({
           ok: true,
@@ -45,18 +41,24 @@ describe('ReportFiresForm', () => {
 
       expect(window.fetch).toHaveBeenCalled();
     });
-    
-    test('should throw and error if fetch fails', async () => {
-      window.fetch = jest.fn().mockImplementation(() =>
-        Promise.resolve({
-          ok: false,
-          json: () => Promise.reject()
-        })
-      );
-      
-      await expect(userSignUpRequest())
-      .rejects.toEqual(Error(`Sorry, we could not fetch unverified fires from the database ${error.status}`));
-    });
+  });
+
+  describe('mapDispatchToProps', () => {
+    test('should call dispatch when addUnverifiedFire is called', () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = addUnverifiedFire(mockFiresFromDb)
+      const mappedProps = mapDispatchToProps(mockDispatch);
+
+      mappedProps.addUnverifiedFire(mockFiresFromDb);
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    })
+  })
+  
+  test('should match snapshot', () => {
+    const wrapper = shallow( < ReportFiresForm /> );
+
+    expect(wrapper).toMatchSnapshot();
   });
 });
 

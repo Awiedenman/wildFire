@@ -5,9 +5,9 @@ import { shallow  } from 'enzyme';
 describe('ReportFires', () => {
   test('should match the snapshot', () => {
     const wrapper = shallow(
-      <ReportFires/>)
+      <ReportFires/>);
 
-      expect(wrapper).toMatchSnapshot();
-  })
+    expect(wrapper).toMatchSnapshot();
+  });
   
-})
+});

@@ -21,18 +21,20 @@ export class Home extends Component {
     try {
       // await this.setState({isLoading: true})
       const currentFireData = await currentFireRequest();
-      // await this.setState({isLoading: false});
       const cleanedCurrentFireData = fireDataCleaner(currentFireData);
-      const firesFromDb = await getUnverifiedFires();      
+      // await this.setState({isLoading: false});
+      const firesFromDb = await getUnverifiedFires(); 
       this.props.storeCurrentFireData(cleanedCurrentFireData, firesFromDb);
     } catch (error) {
-      throw Error(`Couldn\'t retreive the current fires list ${error.message}`);
+      throw error;
     }
   }
+
   style = {
     width: '100%',
     height: '100%'
   }
+
   render() {
     return (
       <div>
@@ -44,7 +46,9 @@ export class Home extends Component {
 }
 
 export const mapDispatchToProps = dispatch => ({
-  storeCurrentFireData: (cleanedCurrentFireData, firesFromDb) => dispatch(storeCurrentFireData(cleanedCurrentFireData, firesFromDb))
+  storeCurrentFireData: (cleanedCurrentFireData, firesFromDb) => {
+    dispatch(storeCurrentFireData(cleanedCurrentFireData, firesFromDb));
+  }
 });
 
 export default withRouter(connect(null, mapDispatchToProps)(Home));

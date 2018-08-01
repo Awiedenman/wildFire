@@ -3,9 +3,7 @@
 }
 
 .header {
-  /* position: relative; */
   display: flex;
-  /* flex-direction: row; */
   background-image: url('../../images/trees.jpg');
   background-repeat: repeat;
   background-position: top;
@@ -13,6 +11,7 @@
   height: 152px;
   color: #000;
 }
+
 .layer {
   display: flex;
   justify-content: space-around;
@@ -23,9 +22,6 @@
 }
 
 .main-title {
-  /* position: absolute; */
-  /* right: 30px;
-  top: 1.7rem; */
   font-size: 5rem;
   color: #435245;
   padding-top: 1rem;
@@ -33,7 +29,6 @@
 }
 
 .header-navLinks {
-  /* display: inline-block; */
   padding: 82px;
 }
 
@@ -48,11 +43,11 @@ a:hover {
   color: rgba(255, 72, 0, 0.63);
   border-bottom: .1rem solid rgba(107, 69, 18, 0.767);
   font-weight: bolder;
-  margin: 9.58px;
+  margin: 14.85px;
 }
 
 .fire {
-  color: rgba(255, 72, 0, 0.63);
+  color: rgba(255, 72, 0, 0.603);
 }
 
 @media screen and (max-width: 1100px) {
@@ -60,17 +55,14 @@ a:hover {
     display: flex;
     align-items: center;
     flex-direction: column-reverse;
-    /* background-image: none; */
   }
 
   .main-title {
     position: inline;
-    /* right: 30px;
-    top: 1.7rem; */
-    /* font-size: 5rem;
-    color: #435245; */
+    top: 1.7rem; 
+    color: #435245; 
     padding-bottom: 2rem;
-    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
   }
 
   .main-title {
@@ -78,7 +70,6 @@ a:hover {
   }
 
   .header-navLinks {
-    /* display: inline-block; */
-    padding: 0 0 5px 0;
+    padding: 0 0 10px 0;
   }
 }
