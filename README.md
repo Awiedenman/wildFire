@@ -1,3 +1,5 @@
+<img src='https://github.com/Awiedenman/wildFire/blob/master/screen-shot1.png' />
+<img src='https://github.com/Awiedenman/wildFire/blob/master/screen-shot2.png' />
 
 # colorado-fire
 - [x]  Figure out how to convert xml to JSON
