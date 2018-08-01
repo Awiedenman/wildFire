@@ -18,12 +18,15 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        <div
+          className="form-fire-logo"
+/>,
+        <h2>
+          Report a Fire
+</h2>,
         <section
           className="reportFire-form-section"
 >
-          <h3>
-                    Name
-          </h3>
           <label
                     for="name"
           />
@@ -50,7 +53,12 @@ ShallowWrapper {
           className="reportFire-form-section"
 >
           <h3>
-                    (Required)
+                    <span
+                              className="star"
+                    >
+                              *
+                    </span>
+                    Required
           </h3>
           <label
                     for="latitude"
@@ -82,12 +90,14 @@ ShallowWrapper {
           <label
                     for="city"
           />
-          <h3>
-                    Location
-          </h3>
           <br />
           <h3>
-                    (optional)
+                    <span
+                              className="star"
+                    >
+                              *
+                    </span>
+                     optional
           </h3>
           <input
                     id="city"
@@ -131,10 +141,29 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "className": "form-fire-logo",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Report a Fire",
+        },
+        "ref": null,
+        "rendered": "Report a Fire",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
           "children": Array [
-            <h3>
-              Name
-</h3>,
             <label
               for="name"
 />,
@@ -160,17 +189,6 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Name",
-            },
-            "ref": null,
-            "rendered": "Name",
-            "type": "h3",
-          },
           Object {
             "instance": null,
             "key": undefined,
@@ -242,7 +260,12 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <h3>
-              (Required)
+              <span
+                            className="star"
+              >
+                            *
+              </span>
+              Required
 </h3>,
             <label
               for="latitude"
@@ -276,10 +299,31 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "(Required)",
+              "children": Array [
+                <span
+                  className="star"
+>
+                  *
+</span>,
+                "Required",
+              ],
             },
             "ref": null,
-            "rendered": "(Required)",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "*",
+                  "className": "star",
+                },
+                "ref": null,
+                "rendered": "*",
+                "type": "span",
+              },
+              "Required",
+            ],
             "type": "h3",
           },
           Object {
@@ -357,12 +401,14 @@ ShallowWrapper {
             <label
               for="city"
 />,
-            <h3>
-              Location
-</h3>,
             <br />,
             <h3>
-              (optional)
+              <span
+                            className="star"
+              >
+                            *
+              </span>
+               optional
 </h3>,
             <input
               id="city"
@@ -411,17 +457,6 @@ ShallowWrapper {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
-            "props": Object {
-              "children": "Location",
-            },
-            "ref": null,
-            "rendered": "Location",
-            "type": "h3",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
             "props": Object {},
             "ref": null,
             "rendered": null,
@@ -432,10 +467,31 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "(optional)",
+              "children": Array [
+                <span
+                  className="star"
+>
+                  *
+</span>,
+                " optional",
+              ],
             },
             "ref": null,
-            "rendered": "(optional)",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "*",
+                  "className": "star",
+                },
+                "ref": null,
+                "rendered": "*",
+                "type": "span",
+              },
+              " optional",
+            ],
             "type": "h3",
           },
           Object {
@@ -530,12 +586,15 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          <div
+            className="form-fire-logo"
+/>,
+          <h2>
+            Report a Fire
+</h2>,
           <section
             className="reportFire-form-section"
 >
-            <h3>
-                        Name
-            </h3>
             <label
                         for="name"
             />
@@ -562,7 +621,12 @@ ShallowWrapper {
             className="reportFire-form-section"
 >
             <h3>
-                        (Required)
+                        <span
+                                    className="star"
+                        >
+                                    *
+                        </span>
+                        Required
             </h3>
             <label
                         for="latitude"
@@ -594,12 +658,14 @@ ShallowWrapper {
             <label
                         for="city"
             />
-            <h3>
-                        Location
-            </h3>
             <br />
             <h3>
-                        (optional)
+                        <span
+                                    className="star"
+                        >
+                                    *
+                        </span>
+                         optional
             </h3>
             <input
                         id="city"
@@ -643,10 +709,29 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "className": "form-fire-logo",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Report a Fire",
+          },
+          "ref": null,
+          "rendered": "Report a Fire",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
             "children": Array [
-              <h3>
-                Name
-</h3>,
               <label
                 for="name"
 />,
@@ -672,17 +757,6 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Name",
-              },
-              "ref": null,
-              "rendered": "Name",
-              "type": "h3",
-            },
             Object {
               "instance": null,
               "key": undefined,
@@ -754,7 +828,12 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <h3>
-                (Required)
+                <span
+                                className="star"
+                >
+                                *
+                </span>
+                Required
 </h3>,
               <label
                 for="latitude"
@@ -788,10 +867,31 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "(Required)",
+                "children": Array [
+                  <span
+                    className="star"
+>
+                    *
+</span>,
+                  "Required",
+                ],
               },
               "ref": null,
-              "rendered": "(Required)",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "*",
+                    "className": "star",
+                  },
+                  "ref": null,
+                  "rendered": "*",
+                  "type": "span",
+                },
+                "Required",
+              ],
               "type": "h3",
             },
             Object {
@@ -869,12 +969,14 @@ ShallowWrapper {
               <label
                 for="city"
 />,
-              <h3>
-                Location
-</h3>,
               <br />,
               <h3>
-                (optional)
+                <span
+                                className="star"
+                >
+                                *
+                </span>
+                 optional
 </h3>,
               <input
                 id="city"
@@ -923,17 +1025,6 @@ ShallowWrapper {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
-              "props": Object {
-                "children": "Location",
-              },
-              "ref": null,
-              "rendered": "Location",
-              "type": "h3",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
               "props": Object {},
               "ref": null,
               "rendered": null,
@@ -944,10 +1035,31 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "(optional)",
+                "children": Array [
+                  <span
+                    className="star"
+>
+                    *
+</span>,
+                  " optional",
+                ],
               },
               "ref": null,
-              "rendered": "(optional)",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "*",
+                    "className": "star",
+                  },
+                  "ref": null,
+                  "rendered": "*",
+                  "type": "span",
+                },
+                " optional",
+              ],
               "type": "h3",
             },
             Object {

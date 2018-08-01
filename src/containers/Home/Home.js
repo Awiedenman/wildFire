@@ -24,6 +24,8 @@ export class Home extends Component {
       const cleanedCurrentFireData = fireDataCleaner(currentFireData);
       // await this.setState({isLoading: false});
       const firesFromDb = await getUnverifiedFires(); 
+      console.log(firesFromDb);
+      
       this.props.storeCurrentFireData(cleanedCurrentFireData, firesFromDb);
     } catch (error) {
       throw error;

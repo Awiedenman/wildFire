@@ -39,8 +39,8 @@ export class CurrentFires extends Component {
         google={this.props.google}
         title={fire.fire_name ? fire.fire_name : fire.last_name}
         name={<a href='https://www.google.com'>{`${fire.fire_name || fire.last_name}`}</a>}
-        acresBurned={fire.acres_burned}
-        lastUpdate={fire.last_update}
+        acresBurned={fire.acres_burned || 'unknown'}
+        lastUpdate={fire.last_update || fire.created_at}
         // icon={{url: "../../images/fire.svg",
         // anchor: new google.maps.Point(32,32),
         // scaledSize: new google.maps.Size(64,64)
