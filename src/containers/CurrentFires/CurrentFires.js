@@ -3,6 +3,7 @@ import { apiKey } from '../../api-key';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import fireImage from '../../images/fire.svg';
 
 // import MarkerClusterer from 'node-js-marker-clusterer';
 
@@ -41,10 +42,10 @@ export class CurrentFires extends Component {
         name={<a href='https://www.google.com'>{`${fire.fire_name || fire.last_name}`}</a>}
         acresBurned={fire.acres_burned || 'unknown'}
         lastUpdate={fire.last_update || fire.created_at}
-        // icon={{url: "../../images/fire.svg",
-        // anchor: new google.maps.Point(32,32),
-        // scaledSize: new google.maps.Size(64,64)
-        // }}
+        icon={{url: fireImage,
+        anchor: new this.props.google.maps.Point(32,32),
+        scaledSize: new this.props.google.maps.Size(24,24)
+        }}
         onClick={this.onMarkerClick}
         position={{lat: fire.latitude, lng: fire.longitude }}
         key={fire.fire_name + fire.latitude} 
