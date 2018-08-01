@@ -1,5 +1,5 @@
-![screen shot1](./wildFire/src/images/screen-shot1.png)
-![screen shot2](./wildFire/src/images/screen-shot2.png)
+![screen shot1](./src/images/screen-shot1.png)
+![screen shot2](./src/images/screen-shot2.png)
 
 # colorado-fire
 - [x]  Figure out how to convert xml to JSON
