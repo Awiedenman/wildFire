@@ -24,15 +24,13 @@ export class ReportFiresForm extends Component {
     this.setState({[name]: value})
   }
 
-  handlePostUnverifiedFires = async (event) => {
-    console.log(this.props);
-    
+  handlePostUnverifiedFires = async (event) => {    
     event.preventDefault();
     try {
       const unverifiedFiresFromDb = await postUnverifiedFires(this.state);
       this.props.addUnverifiedFire(unverifiedFiresFromDb)
     } catch (error){
-      throw(`${error.status}`);
+      throw Error('Sorry, we could not post unverified fires from the database');
     }
       
   };

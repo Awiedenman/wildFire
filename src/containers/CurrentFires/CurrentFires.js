@@ -50,7 +50,7 @@ export class CurrentFires extends Component {
         // }}
         onClick={this.onMarkerClick}
         position={{lat: fire.latitude, lng: fire.longitude }}
-        key={fire.fire_name} 
+        key={fire.fire_name + fire.latitude} 
       />;
     });
 

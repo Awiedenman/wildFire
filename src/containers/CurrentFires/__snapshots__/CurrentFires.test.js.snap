@@ -54,10 +54,10 @@ ShallowWrapper {
         zoom={3.4}
 >
         <Marker
-                acresBurned=" 54129 acres"
+                acresBurned={undefined}
                 google={undefined}
-                lastUpdate=" 7/24/2018 10:15:00 PM"
-                name="<a href='https://www.google.com/search?416>fire.name</a>"
+                lastUpdate={undefined}
+                name="<a href='https://www.google.com/search?undefined>fire.name</a>"
                 onClick={[Function]}
                 position={
                         Object {
@@ -65,7 +65,7 @@ ShallowWrapper {
                                 "lng": "-107.8081",
                               }
                 }
-                title="416"
+                title={undefined}
         />
         <InfoWindow
                 marker={Object {}}
@@ -98,10 +98,10 @@ ShallowWrapper {
         "children": Array [
           Array [
             <Marker
-              acresBurned=" 54129 acres"
+              acresBurned={undefined}
               google={undefined}
-              lastUpdate=" 7/24/2018 10:15:00 PM"
-              name="<a href='https://www.google.com/search?416>fire.name</a>"
+              lastUpdate={undefined}
+              name="<a href='https://www.google.com/search?undefined>fire.name</a>"
               onClick={[Function]}
               position={
                             Object {
@@ -109,7 +109,7 @@ ShallowWrapper {
                                           "lng": "-107.8081",
                                         }
               }
-              title="416"
+              title={undefined}
 />,
           ],
           <InfoWindow
@@ -144,19 +144,19 @@ ShallowWrapper {
       "rendered": Array [
         Object {
           "instance": null,
-          "key": "416",
+          "key": "undefined37.4605800000001",
           "nodeType": "class",
           "props": Object {
-            "acresBurned": " 54129 acres",
+            "acresBurned": undefined,
             "google": undefined,
-            "lastUpdate": " 7/24/2018 10:15:00 PM",
-            "name": "<a href='https://www.google.com/search?416>fire.name</a>",
+            "lastUpdate": undefined,
+            "name": "<a href='https://www.google.com/search?undefined>fire.name</a>",
             "onClick": [Function],
             "position": Object {
               "lat": "37.4605800000001",
               "lng": "-107.8081",
             },
-            "title": "416",
+            "title": undefined,
           },
           "ref": null,
           "rendered": null,
@@ -282,10 +282,10 @@ ShallowWrapper {
           zoom={3.4}
 >
           <Marker
-                    acresBurned=" 54129 acres"
+                    acresBurned={undefined}
                     google={undefined}
-                    lastUpdate=" 7/24/2018 10:15:00 PM"
-                    name="<a href='https://www.google.com/search?416>fire.name</a>"
+                    lastUpdate={undefined}
+                    name="<a href='https://www.google.com/search?undefined>fire.name</a>"
                     onClick={[Function]}
                     position={
                               Object {
@@ -293,7 +293,7 @@ ShallowWrapper {
                                         "lng": "-107.8081",
                                       }
                     }
-                    title="416"
+                    title={undefined}
           />
           <InfoWindow
                     marker={Object {}}
@@ -326,10 +326,10 @@ ShallowWrapper {
           "children": Array [
             Array [
               <Marker
-                acresBurned=" 54129 acres"
+                acresBurned={undefined}
                 google={undefined}
-                lastUpdate=" 7/24/2018 10:15:00 PM"
-                name="<a href='https://www.google.com/search?416>fire.name</a>"
+                lastUpdate={undefined}
+                name="<a href='https://www.google.com/search?undefined>fire.name</a>"
                 onClick={[Function]}
                 position={
                                 Object {
@@ -337,7 +337,7 @@ ShallowWrapper {
                                                 "lng": "-107.8081",
                                               }
                 }
-                title="416"
+                title={undefined}
 />,
             ],
             <InfoWindow
@@ -372,19 +372,19 @@ ShallowWrapper {
         "rendered": Array [
           Object {
             "instance": null,
-            "key": "416",
+            "key": "undefined37.4605800000001",
             "nodeType": "class",
             "props": Object {
-              "acresBurned": " 54129 acres",
+              "acresBurned": undefined,
               "google": undefined,
-              "lastUpdate": " 7/24/2018 10:15:00 PM",
-              "name": "<a href='https://www.google.com/search?416>fire.name</a>",
+              "lastUpdate": undefined,
+              "name": "<a href='https://www.google.com/search?undefined>fire.name</a>",
               "onClick": [Function],
               "position": Object {
                 "lat": "37.4605800000001",
                 "lng": "-107.8081",
               },
-              "title": "416",
+              "title": undefined,
             },
             "ref": null,
             "rendered": null,

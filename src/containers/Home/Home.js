@@ -5,6 +5,8 @@ import { currentFireRequest, getUnverifiedFires  } from '../../heplers/apiCalls/
 import { storeCurrentFireData } from '../../actions/index';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 
 
 export class Home extends Component {
@@ -19,10 +21,9 @@ export class Home extends Component {
     try {
       // await this.setState({isLoading: true})
       const currentFireData = await currentFireRequest();
-      const firesFromDb = await getUnverifiedFires();
-      // console.log(firesFromDb);
       // await this.setState({isLoading: false});
       const cleanedCurrentFireData = fireDataCleaner(currentFireData);
+      const firesFromDb = await getUnverifiedFires();      
       this.props.storeCurrentFireData(cleanedCurrentFireData, firesFromDb);
     } catch (error) {
       throw Error(`Couldn\'t retreive the current fires list ${error.message}`);
@@ -47,4 +48,8 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default withRouter(connect(null, mapDispatchToProps)(Home));
+
+Home.propTypes = {
+  storeCurrentFireData: PropTypes.func
+};
 

@@ -10,7 +10,10 @@ export const currentFireRequest = async () => {
       compact: true,
       spaces: 2
     });
-  console.log(JSON.parse(jsonData));
+  
+  if (!xmlResponse.ok) {
+    throw Error('Sorry, there was problem saving you favorite. Please try again later.');
+  }
         
   return JSON.parse(jsonData) ;
 };
@@ -48,6 +51,10 @@ export const postUnverifiedFires = async(unverifiedFire) => {
     } 
   });
   const fireData = await postFireRequest.json();
-  console.log(fireData);
+  
+  if (!postFireRequest.ok) {
+    throw Error('Sorry, there was problem saving you favorite. Please try again later.');
+  }
+
   return fireData;
 };

@@ -29,7 +29,7 @@ ShallowWrapper {
           />
           <input
                     id="name"
-                    name="firstName"
+                    name="first_name"
                     onChange={[Function]}
                     placeholder="First Name"
                     value=""
@@ -39,7 +39,7 @@ ShallowWrapper {
           />
           <input
                     id="lastName"
-                    name="lastName"
+                    name="last_name"
                     onChange={[Function]}
                     placeholder="Last Name"
                     value=""
@@ -50,7 +50,7 @@ ShallowWrapper {
           className="reportFire-form-section"
 >
           <h3>
-                    (Optional)
+                    (Required)
           </h3>
           <label
                     for="latitude"
@@ -60,6 +60,7 @@ ShallowWrapper {
                     name="latitude"
                     onChange={[Function]}
                     placeholder="Latitude"
+                    required={true}
                     value=""
           />
           <label
@@ -70,6 +71,7 @@ ShallowWrapper {
                     name="longitude"
                     onChange={[Function]}
                     placeholder="Longitude"
+                    required={true}
                     value=""
           />
 </section>,
@@ -82,6 +84,10 @@ ShallowWrapper {
           />
           <h3>
                     Location
+          </h3>
+          <br />
+          <h3>
+                    (optional)
           </h3>
           <input
                     id="city"
@@ -105,7 +111,7 @@ ShallowWrapper {
           />
           <input
                     id="zipCode"
-                    name="zipCode"
+                    name="zip_code"
                     onChange={[Function]}
                     placeholder="Zip Code"
                     value=""
@@ -134,7 +140,7 @@ ShallowWrapper {
 />,
             <input
               id="name"
-              name="firstName"
+              name="first_name"
               onChange={[Function]}
               placeholder="First Name"
               value=""
@@ -144,7 +150,7 @@ ShallowWrapper {
 />,
             <input
               id="lastName"
-              name="lastName"
+              name="last_name"
               onChange={[Function]}
               placeholder="Last Name"
               value=""
@@ -182,7 +188,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "id": "name",
-              "name": "firstName",
+              "name": "first_name",
               "onChange": [Function],
               "placeholder": "First Name",
               "value": "",
@@ -208,7 +214,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "id": "lastName",
-              "name": "lastName",
+              "name": "last_name",
               "onChange": [Function],
               "placeholder": "Last Name",
               "value": "",
@@ -236,7 +242,7 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <h3>
-              (Optional)
+              (Required)
 </h3>,
             <label
               for="latitude"
@@ -246,6 +252,7 @@ ShallowWrapper {
               name="latitude"
               onChange={[Function]}
               placeholder="Latitude"
+              required={true}
               value=""
 />,
             <label
@@ -256,6 +263,7 @@ ShallowWrapper {
               name="longitude"
               onChange={[Function]}
               placeholder="Longitude"
+              required={true}
               value=""
 />,
           ],
@@ -268,10 +276,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "(Optional)",
+              "children": "(Required)",
             },
             "ref": null,
-            "rendered": "(Optional)",
+            "rendered": "(Required)",
             "type": "h3",
           },
           Object {
@@ -294,6 +302,7 @@ ShallowWrapper {
               "name": "latitude",
               "onChange": [Function],
               "placeholder": "Latitude",
+              "required": true,
               "value": "",
             },
             "ref": null,
@@ -320,6 +329,7 @@ ShallowWrapper {
               "name": "longitude",
               "onChange": [Function],
               "placeholder": "Longitude",
+              "required": true,
               "value": "",
             },
             "ref": null,
@@ -350,6 +360,10 @@ ShallowWrapper {
             <h3>
               Location
 </h3>,
+            <br />,
+            <h3>
+              (optional)
+</h3>,
             <input
               id="city"
               name="city"
@@ -372,7 +386,7 @@ ShallowWrapper {
 />,
             <input
               id="zipCode"
-              name="zipCode"
+              name="zip_code"
               onChange={[Function]}
               placeholder="Zip Code"
               value=""
@@ -402,6 +416,26 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": "Location",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "(optional)",
+            },
+            "ref": null,
+            "rendered": "(optional)",
             "type": "h3",
           },
           Object {
@@ -462,7 +496,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "id": "zipCode",
-              "name": "zipCode",
+              "name": "zip_code",
               "onChange": [Function],
               "placeholder": "Zip Code",
               "value": "",
@@ -507,7 +541,7 @@ ShallowWrapper {
             />
             <input
                         id="name"
-                        name="firstName"
+                        name="first_name"
                         onChange={[Function]}
                         placeholder="First Name"
                         value=""
@@ -517,7 +551,7 @@ ShallowWrapper {
             />
             <input
                         id="lastName"
-                        name="lastName"
+                        name="last_name"
                         onChange={[Function]}
                         placeholder="Last Name"
                         value=""
@@ -528,7 +562,7 @@ ShallowWrapper {
             className="reportFire-form-section"
 >
             <h3>
-                        (Optional)
+                        (Required)
             </h3>
             <label
                         for="latitude"
@@ -538,6 +572,7 @@ ShallowWrapper {
                         name="latitude"
                         onChange={[Function]}
                         placeholder="Latitude"
+                        required={true}
                         value=""
             />
             <label
@@ -548,6 +583,7 @@ ShallowWrapper {
                         name="longitude"
                         onChange={[Function]}
                         placeholder="Longitude"
+                        required={true}
                         value=""
             />
 </section>,
@@ -560,6 +596,10 @@ ShallowWrapper {
             />
             <h3>
                         Location
+            </h3>
+            <br />
+            <h3>
+                        (optional)
             </h3>
             <input
                         id="city"
@@ -583,7 +623,7 @@ ShallowWrapper {
             />
             <input
                         id="zipCode"
-                        name="zipCode"
+                        name="zip_code"
                         onChange={[Function]}
                         placeholder="Zip Code"
                         value=""
@@ -612,7 +652,7 @@ ShallowWrapper {
 />,
               <input
                 id="name"
-                name="firstName"
+                name="first_name"
                 onChange={[Function]}
                 placeholder="First Name"
                 value=""
@@ -622,7 +662,7 @@ ShallowWrapper {
 />,
               <input
                 id="lastName"
-                name="lastName"
+                name="last_name"
                 onChange={[Function]}
                 placeholder="Last Name"
                 value=""
@@ -660,7 +700,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "id": "name",
-                "name": "firstName",
+                "name": "first_name",
                 "onChange": [Function],
                 "placeholder": "First Name",
                 "value": "",
@@ -686,7 +726,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "id": "lastName",
-                "name": "lastName",
+                "name": "last_name",
                 "onChange": [Function],
                 "placeholder": "Last Name",
                 "value": "",
@@ -714,7 +754,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <h3>
-                (Optional)
+                (Required)
 </h3>,
               <label
                 for="latitude"
@@ -724,6 +764,7 @@ ShallowWrapper {
                 name="latitude"
                 onChange={[Function]}
                 placeholder="Latitude"
+                required={true}
                 value=""
 />,
               <label
@@ -734,6 +775,7 @@ ShallowWrapper {
                 name="longitude"
                 onChange={[Function]}
                 placeholder="Longitude"
+                required={true}
                 value=""
 />,
             ],
@@ -746,10 +788,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "(Optional)",
+                "children": "(Required)",
               },
               "ref": null,
-              "rendered": "(Optional)",
+              "rendered": "(Required)",
               "type": "h3",
             },
             Object {
@@ -772,6 +814,7 @@ ShallowWrapper {
                 "name": "latitude",
                 "onChange": [Function],
                 "placeholder": "Latitude",
+                "required": true,
                 "value": "",
               },
               "ref": null,
@@ -798,6 +841,7 @@ ShallowWrapper {
                 "name": "longitude",
                 "onChange": [Function],
                 "placeholder": "Longitude",
+                "required": true,
                 "value": "",
               },
               "ref": null,
@@ -828,6 +872,10 @@ ShallowWrapper {
               <h3>
                 Location
 </h3>,
+              <br />,
+              <h3>
+                (optional)
+</h3>,
               <input
                 id="city"
                 name="city"
@@ -850,7 +898,7 @@ ShallowWrapper {
 />,
               <input
                 id="zipCode"
-                name="zipCode"
+                name="zip_code"
                 onChange={[Function]}
                 placeholder="Zip Code"
                 value=""
@@ -880,6 +928,26 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": "Location",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "(optional)",
+              },
+              "ref": null,
+              "rendered": "(optional)",
               "type": "h3",
             },
             Object {
@@ -940,7 +1008,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "id": "zipCode",
-                "name": "zipCode",
+                "name": "zip_code",
                 "onChange": [Function],
                 "placeholder": "Zip Code",
                 "value": "",
