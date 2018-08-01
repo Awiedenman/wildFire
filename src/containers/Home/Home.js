@@ -14,18 +14,14 @@ export class Home extends Component {
     super(props);
     this.state = {
       isLoading: false
-    }
+    };
   }
 
   async componentDidMount() { 
     try {
-      // await this.setState({isLoading: true})
       const currentFireData = await currentFireRequest();
       const cleanedCurrentFireData = fireDataCleaner(currentFireData);
-      // await this.setState({isLoading: false});
       const firesFromDb = await getUnverifiedFires(); 
-      console.log(firesFromDb);
-      
       this.props.storeCurrentFireData(cleanedCurrentFireData, firesFromDb);
     } catch (error) {
       throw error;
