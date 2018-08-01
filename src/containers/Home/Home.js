@@ -12,9 +12,9 @@ import PropTypes from 'prop-types';
 export class Home extends Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   isLoading: false
-    // }
+    this.state = {
+      isLoading: false
+    }
   }
 
   async componentDidMount() { 
@@ -39,7 +39,9 @@ export class Home extends Component {
     return (
       <div>
         <CurrentFires
-          style = {this.style}/>
+          style = {this.style}
+          isLoading={this.state.isLoading}
+        />
       </div>
     );
   }

@@ -38,7 +38,7 @@ export class CurrentFires extends Component {
       return <Marker
         google={this.props.google}
         title={fire.fire_name ? fire.fire_name : fire.last_name}
-        name={`<a href='https://www.google.com/search?${fire.fire_name}>fire.name</a>`}
+        name={<a href='https://www.google.com'>{`${fire.fire_name || fire.last_name}`}</a>}
         acresBurned={fire.acres_burned}
         lastUpdate={fire.last_update}
         // icon={{url: "../../images/fire.svg",
@@ -84,7 +84,9 @@ export class CurrentFires extends Component {
           minZoom={3.4}
           maxZoom={14}
         >
-          {currentFireMarkers}
+          {this.props.isLoading ? 
+            <img id='wolf' src={ require('../../images/no-fire.svg')}/> :
+            currentFireMarkers}
           <InfoWindow
             marker={this.state.activeMarker}
             visible={this.state.showingInfoWindow}>
@@ -111,5 +113,6 @@ export default connect(mapStateToProps)(googleWrapper);
 CurrentFires.propTypes = {
   currentFires: PropTypes.array,
   google: PropTypes.object,
-  style: PropTypes.object
+  style: PropTypes.object,
+  isLoading: PropTypes.bool
 };
