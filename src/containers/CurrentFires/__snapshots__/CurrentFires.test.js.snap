@@ -8,12 +8,13 @@ ShallowWrapper {
     currentFires={
         Array [
             Object {
-              "acresBurned": " 54129 acres",
+              "acres_burned": " 54129 acres",
+              "fire_name": "416",
               "image": undefined,
-              "lastUpdate": " 7/24/2018 10:15:00 PM",
+              "last_update": " 7/24/2018 10:15:00 PM",
               "latitude": "37.4605800000001",
               "longitude": "-107.8081",
-              "name": "416",
+              "verified": true,
             },
           ]
     }
@@ -144,7 +145,7 @@ ShallowWrapper {
       "rendered": Array [
         Object {
           "instance": null,
-          "key": "416",
+          "key": "41637.4605800000001",
           "nodeType": "class",
           "props": Object {
             "acresBurned": " 54129 acres",
@@ -372,7 +373,7 @@ ShallowWrapper {
         "rendered": Array [
           Object {
             "instance": null,
-            "key": "416",
+            "key": "41637.4605800000001",
             "nodeType": "class",
             "props": Object {
               "acresBurned": " 54129 acres",

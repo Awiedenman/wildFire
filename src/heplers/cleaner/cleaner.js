@@ -12,6 +12,5 @@ export const fireDataCleaner = (fireData) => {
     currentFires.push(fireObject);
     return currentFires;
   }, []);
-  // console.log('out', cleanFireData);
   return cleanFireData;
 };

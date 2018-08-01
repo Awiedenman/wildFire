@@ -6,12 +6,11 @@ import { CurrentFires, mapStateToProps } from './CurrentFires';
 describe('CurrentFires', () => {
 
   describe('onMarkerClick', () => {
-
     test('should set the state ', () => {
       const wrapper = shallow(
         <CurrentFires 
           currentFires={mockCleanFireData}
-        /> )
+        /> );
 
       const mockProps = {
         name: "416",
@@ -20,21 +19,21 @@ describe('CurrentFires', () => {
         lastUpdate: " 7/24/2018 10:15:00 PM",
         latitude: "37.4605800000001",
         longitude: "-107.8081"
-      }
+      };
 
       wrapper.instance().onMarkerClick(mockProps);
 
       expect(wrapper.state('selectedPlace')).toEqual(mockProps);
       expect(wrapper.state('showingInfoWindow')).toEqual(true);
-    })
-  })
+    });
+  });
 
   describe('onMapClicked', () => {
     test('should reset state when map is clicked off of infoWindow', () => {
       const wrapper = shallow(
-          <CurrentFires 
-            currentFires={mockCleanFireData}
-          />)
+        <CurrentFires 
+          currentFires={mockCleanFireData}
+        />);
   
       const mockProps = {};
   
@@ -47,30 +46,30 @@ describe('CurrentFires', () => {
   
       expect(wrapper.state('showingInfoWindow')).toEqual(false);
       expect(wrapper.state('activeMarker')).toEqual({});   
-    }) 
-  })
+    }); 
+  });
 
   describe('mapStateToProps', () => {
     test('should return an array with cleanedCurrentFireData from state', () => {
       const mockState = {
         currentFires: mockCleanFireData,
         test: 'testData'
-      }
+      };
   
       const expected = {currentFires: mockCleanFireData};
   
-      const mappedProps = mapStateToProps(mockState)
+      const mappedProps = mapStateToProps(mockState);
   
-      expect(mappedProps).toEqual(expected)
-    }) 
-  })
+      expect(mappedProps).toEqual(expected);
+    }); 
+  });
 
   test('should match snapshot', () => {
     const wrapper = shallow(
       <CurrentFires
         currentFires={mockCleanFireData}
-      />)
+      />);
 
-      expect(wrapper).toMatchSnapshot();
-  })  
-})
+    expect(wrapper).toMatchSnapshot();
+  });  
+});

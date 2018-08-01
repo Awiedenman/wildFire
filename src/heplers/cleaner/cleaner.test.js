@@ -5,8 +5,8 @@ import { mockParsedFireData } from '../../MockData/mockParsedFireData';
 describe('cleaner', () => {
   test('should clean the data', () => {
 
-    const result = fireDataCleaner(mockParsedFireData)
+    const result = fireDataCleaner(mockParsedFireData);
 
     expect(result).toEqual(mockCleanFireData);
-  })  
-})
+  });  
+});

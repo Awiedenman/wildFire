@@ -2,8 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Home , mapDispatchToProps } from './Home';
 import { storeCurrentFireData } from '../../actions';
-import { currentFireRequest } from '../../heplers/apiCalls/apiCalls';
-import { fireDataCleaner } from '../../heplers/cleaner/cleaner';
 import { mockCleanFireData } from '../../MockData/mockCleanFireData';
 import { mockParsedFireData } from '../../MockData/mockParsedFireData';
 
@@ -15,12 +13,12 @@ describe('Home', () => {
   let wrapper;
   const mockStoreCurrentFireData = jest.fn(); 
 
-  describe('componentDidMount', () => {
+  describe.skip('componentDidMount', () => {
     beforeEach(()=> {
       wrapper = shallow(
-      <Home
-        storeCurrentFireData = {mockStoreCurrentFireData}
-      />)
+        <Home
+          storeCurrentFireData = {mockStoreCurrentFireData}
+        />)
     })
 
     test('should fetch initial fire data on page load', async () => {
@@ -31,8 +29,6 @@ describe('Home', () => {
   describe('mapDispatchToProps', () => {
     test('should call dispatch when storeCurrentFireData is called', () => {
       const mockDispatch = jest.fn();
-      // const mockCleanFireData = mockCleanFireData
-
       const actionToDispatch = storeCurrentFireData(mockCleanFireData);
       const mappedProps = mapDispatchToProps(mockDispatch);
 
