@@ -12,7 +12,7 @@ export const currentFireRequest = async () => {
     });
   
   if (!xmlResponse.ok) {
-    throw Error('Sorry, there was problem saving you favorite. Please try again later.');
+    throw Error('Sorry, there was problem retreiving the current wildfires. Please try again later.');
   }
         
   return JSON.parse(jsonData) ;
@@ -38,6 +38,9 @@ export const getUnverifiedFires = async () => {
   const url = 'http://localhost:3000/api/v1/fires';
   const getFiresResponse = await fetch(url);
   const unverifiedFireData = await getFiresResponse.json();
+  if (!getFiresResponse.ok) {
+    throw Error('Sorry, there was problem retreiving unverified fires. Please try again later.');
+  }
   return unverifiedFireData;
 };
 
@@ -53,7 +56,7 @@ export const postUnverifiedFires = async(unverifiedFire) => {
   const fireData = await postFireRequest.json();
   
   if (!postFireRequest.ok) {
-    throw Error('Sorry, there was problem saving you favorite. Please try again later.');
+    throw Error('Sorry, there was problem sposting your fire. Please try again later.');
   }
 
   return fireData;
