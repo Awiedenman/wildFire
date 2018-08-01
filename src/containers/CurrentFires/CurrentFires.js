@@ -11,6 +11,7 @@ export class CurrentFires extends Component {
   constructor(props){
     super(props);
     this.state = {
+      currentLocation: {},
       showingInfoWindow: false,
       activeMarker: {},
       selectedPlace: {}
@@ -34,7 +35,25 @@ export class CurrentFires extends Component {
     }
   };
 
+  geoLocation = () => {
+    const coder = new this.props.google.maps.Geocoder();
+    coder.geocode({
+          'address': '80203',
+        }, (results, status) => {
+
+          if (status === 'OK') {
+            const location = {
+              lat: results[0].geometry.location.lat(),
+              lng: results[0].geometry.location.lng()
+            }
+            this.setState({currentLocation: location})
+            console.log(location.lng)
+          }
+    })
+}
+
   render() {
+    this.geoLocation();
     const currentFireMarkers = this.props.currentFires.map(fire => {
       return <Marker
         google={this.props.google}
@@ -70,6 +89,7 @@ export class CurrentFires extends Component {
     //   },
     // );
 
+ 
     return (
       <div className='map'>
         <Map
@@ -85,6 +105,10 @@ export class CurrentFires extends Component {
           minZoom={3.4}
           maxZoom={14}
         >
+        <Marker
+             position={this.state.currentLocation}
+
+          />
           {this.props.isLoading ? 
             <img id='wolf' src={ require('../../images/no-fire.svg')}/> :
             currentFireMarkers}
