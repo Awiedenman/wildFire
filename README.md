@@ -1,5 +1,5 @@
-![Favorites page](./wildFire/wildFire/src/images/screen-shot1)
-![Favorites page](./wildFire/wildFire/src/images/screen-shot2)
+![screen shot1](./wildFire/wildFire/src/images/screen-shot1)
+![screen shot2](./wildFire/wildFire/src/images/screen-shot2)
 
 # colorado-fire
 - [x]  Figure out how to convert xml to JSON
