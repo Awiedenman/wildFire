@@ -3,6 +3,7 @@ import { apiKey } from '../../api-key';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import fireImage from '../../images/fire.svg';
 
 // import MarkerClusterer from 'node-js-marker-clusterer';
 
@@ -10,6 +11,7 @@ export class CurrentFires extends Component {
   constructor(props){
     super(props);
     this.state = {
+      currentLocation: {},
       showingInfoWindow: false,
       activeMarker: {},
       selectedPlace: {}
@@ -33,18 +35,36 @@ export class CurrentFires extends Component {
     }
   };
 
+  geoLocation = () => {
+    const coder = new this.props.google.maps.Geocoder();
+    coder.geocode({
+      'address': '80203'
+    }, (results, status) => {
+
+      if (status === 'OK') {
+        const location = {
+          lat: results[0].geometry.location.lat(),
+          lng: results[0].geometry.location.lng()
+        };
+        this.setState({currentLocation: location});
+      }
+    });
+  }
+
   render() {
+    this.geoLocation();
     const currentFireMarkers = this.props.currentFires.map(fire => {
+      const fireName = `https://www.google.com/search?q=${fire.fire_name}%20fire`;
       return <Marker
         google={this.props.google}
         title={fire.fire_name ? fire.fire_name : fire.last_name}
-        name={`<a href='https://www.google.com/search?${fire.fire_name}>fire.name</a>`}
-        acresBurned={fire.acres_burned}
-        lastUpdate={fire.last_update}
-        // icon={{url: "../../images/fire.svg",
-        // anchor: new google.maps.Point(32,32),
-        // scaledSize: new google.maps.Size(64,64)
-        // }}
+        name={<a href={fireName} target='_blank'>{`${fire.fire_name || fire.last_name}`}</a>}
+        acresBurned={fire.acres_burned || 'unknown'}
+        lastUpdate={fire.last_update || fire.created_at}
+        icon={{url: fireImage,
+          anchor: new this.props.google.maps.Point(32,32),
+          scaledSize: new this.props.google.maps.Size(24,24)
+        }}
         onClick={this.onMarkerClick}
         position={{lat: fire.latitude, lng: fire.longitude }}
         key={fire.fire_name + fire.latitude} 
@@ -69,6 +89,7 @@ export class CurrentFires extends Component {
     //   },
     // );
 
+ 
     return (
       <div className='map'>
         <Map
@@ -84,14 +105,23 @@ export class CurrentFires extends Component {
           minZoom={3.4}
           maxZoom={14}
         >
-          {currentFireMarkers}
+          <Marker
+            position={this.state.currentLocation}
+
+          />
+          {this.props.isLoading ? 
+            <img id='wolf' src={ require('../../images/no-fire.svg')}/> :
+            currentFireMarkers}
           <InfoWindow
             marker={this.state.activeMarker}
             visible={this.state.showingInfoWindow}>
             <div>
               <h1>{this.state.selectedPlace.name}</h1>
-              <h3>Current Burn: {this.state.selectedPlace.acresBurned}</h3>
-              <h3>Last updated on {this.state.selectedPlace.lastUpdate}</h3>
+              <h3>Current Burn: {this.state.selectedPlace.acresBurned || 'unknown'}</h3> 
+              { this.state.selectedPlace.lastUpdate ?
+                <h3>Last updated on {this.state.selectedPlace.lastUpdate}</h3> :
+                <h3>status: unverified fire</h3>}
+
             </div>
           </InfoWindow>
         </Map>
@@ -111,5 +141,6 @@ export default connect(mapStateToProps)(googleWrapper);
 CurrentFires.propTypes = {
   currentFires: PropTypes.array,
   google: PropTypes.object,
-  style: PropTypes.object
+  style: PropTypes.object,
+  isLoading: PropTypes.bool
 };

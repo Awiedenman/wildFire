@@ -58,7 +58,13 @@ ShallowWrapper {
                 acresBurned=" 54129 acres"
                 google={undefined}
                 lastUpdate=" 7/24/2018 10:15:00 PM"
-                name="<a href='https://www.google.com/search?416>fire.name</a>"
+                name={
+                        <a
+                                href="https://www.google.com"
+                        >
+                                416
+                        </a>
+                }
                 onClick={[Function]}
                 position={
                         Object {
@@ -102,7 +108,13 @@ ShallowWrapper {
               acresBurned=" 54129 acres"
               google={undefined}
               lastUpdate=" 7/24/2018 10:15:00 PM"
-              name="<a href='https://www.google.com/search?416>fire.name</a>"
+              name={
+                            <a
+                                          href="https://www.google.com"
+                            >
+                                          416
+                            </a>
+              }
               onClick={[Function]}
               position={
                             Object {
@@ -151,7 +163,11 @@ ShallowWrapper {
             "acresBurned": " 54129 acres",
             "google": undefined,
             "lastUpdate": " 7/24/2018 10:15:00 PM",
-            "name": "<a href='https://www.google.com/search?416>fire.name</a>",
+            "name": <a
+              href="https://www.google.com"
+>
+              416
+</a>,
             "onClick": [Function],
             "position": Object {
               "lat": "37.4605800000001",
@@ -286,7 +302,13 @@ ShallowWrapper {
                     acresBurned=" 54129 acres"
                     google={undefined}
                     lastUpdate=" 7/24/2018 10:15:00 PM"
-                    name="<a href='https://www.google.com/search?416>fire.name</a>"
+                    name={
+                              <a
+                                        href="https://www.google.com"
+                              >
+                                        416
+                              </a>
+                    }
                     onClick={[Function]}
                     position={
                               Object {
@@ -330,7 +352,13 @@ ShallowWrapper {
                 acresBurned=" 54129 acres"
                 google={undefined}
                 lastUpdate=" 7/24/2018 10:15:00 PM"
-                name="<a href='https://www.google.com/search?416>fire.name</a>"
+                name={
+                                <a
+                                                href="https://www.google.com"
+                                >
+                                                416
+                                </a>
+                }
                 onClick={[Function]}
                 position={
                                 Object {
@@ -379,7 +407,11 @@ ShallowWrapper {
               "acresBurned": " 54129 acres",
               "google": undefined,
               "lastUpdate": " 7/24/2018 10:15:00 PM",
-              "name": "<a href='https://www.google.com/search?416>fire.name</a>",
+              "name": <a
+                href="https://www.google.com"
+>
+                416
+</a>,
               "onClick": [Function],
               "position": Object {
                 "lat": "37.4605800000001",

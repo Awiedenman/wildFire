@@ -11,9 +11,12 @@ jest.mock('../../heplers/apiCalls/apiCalls', () => ({
 
 describe('Home', () => {
   let wrapper;
-  const mockStoreCurrentFireData = jest.fn(); 
+  let mockStoreCurrentFireData;
+  let mockCurrentFireRequest;
+  let mockGetUnverifiedFires;
 
-  describe.skip('componentDidMount', () => {
+
+  describe('componentDidMount', () => {
     beforeEach(()=> {
       wrapper = shallow(
         <Home
@@ -21,8 +24,12 @@ describe('Home', () => {
         />)
     })
 
-    test('should fetch initial fire data on page load', async () => {
-      await expect(mockStoreCurrentFireData).toHaveBeenCalled();
+    test.skip('should fetch initial fire data on page load', async () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        status: ok,
+        json: () => ({mockParsedFireData})
+      }))
+      await expect(window.fetch).toHaveBeenCalled();
     })
   })
   

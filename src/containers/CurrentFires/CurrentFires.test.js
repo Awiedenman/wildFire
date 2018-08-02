@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { mockCleanFireData } from '../../MockData/mockCleanFireData';
 import { CurrentFires, mapStateToProps } from './CurrentFires';
+import {Geocoder}  from "google";
 
 describe('CurrentFires', () => {
 
@@ -65,9 +66,18 @@ describe('CurrentFires', () => {
   });
 
   test('should match snapshot', () => {
+    const mockGoogle = {
+      maps: {
+        Geocoder: (code) => {
+          this.geocode = code; 
+        }
+      }
+    };
+
     const wrapper = shallow(
       <CurrentFires
         currentFires={mockCleanFireData}
+        google={mockGoogle}
       />);
 
     expect(wrapper).toMatchSnapshot();

@@ -12,17 +12,16 @@ import PropTypes from 'prop-types';
 export class Home extends Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   isLoading: false
-    // }
+    this.state = {
+      isLoading: false
+    };
   }
 
   async componentDidMount() { 
     try {
-      // await this.setState({isLoading: true})
       const currentFireData = await currentFireRequest();
       const cleanedCurrentFireData = fireDataCleaner(currentFireData);
-      // await this.setState({isLoading: false});
+      console.log('current fires', cleanedCurrentFireData.length);
       const firesFromDb = await getUnverifiedFires(); 
       this.props.storeCurrentFireData(cleanedCurrentFireData, firesFromDb);
     } catch (error) {
@@ -39,7 +38,9 @@ export class Home extends Component {
     return (
       <div>
         <CurrentFires
-          style = {this.style}/>
+          style = {this.style}
+          isLoading={this.state.isLoading}
+        />
       </div>
     );
   }
