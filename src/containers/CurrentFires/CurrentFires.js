@@ -38,32 +38,32 @@ export class CurrentFires extends Component {
   geoLocation = () => {
     const coder = new this.props.google.maps.Geocoder();
     coder.geocode({
-          'address': '80203',
-        }, (results, status) => {
+      'address': '80203'
+    }, (results, status) => {
 
-          if (status === 'OK') {
-            const location = {
-              lat: results[0].geometry.location.lat(),
-              lng: results[0].geometry.location.lng()
-            }
-            this.setState({currentLocation: location})
-            console.log(location.lng)
-          }
-    })
-}
+      if (status === 'OK') {
+        const location = {
+          lat: results[0].geometry.location.lat(),
+          lng: results[0].geometry.location.lng()
+        };
+        this.setState({currentLocation: location});
+      }
+    });
+  }
 
   render() {
     this.geoLocation();
     const currentFireMarkers = this.props.currentFires.map(fire => {
+      const fireName = `https://www.google.com/search?q=${fire.fire_name}%20fire`;
       return <Marker
         google={this.props.google}
         title={fire.fire_name ? fire.fire_name : fire.last_name}
-        name={<a href='https://www.google.com'>{`${fire.fire_name || fire.last_name}`}</a>}
+        name={<a href={fireName} target='_blank'>{`${fire.fire_name || fire.last_name}`}</a>}
         acresBurned={fire.acres_burned || 'unknown'}
         lastUpdate={fire.last_update || fire.created_at}
         icon={{url: fireImage,
-        anchor: new this.props.google.maps.Point(32,32),
-        scaledSize: new this.props.google.maps.Size(24,24)
+          anchor: new this.props.google.maps.Point(32,32),
+          scaledSize: new this.props.google.maps.Size(24,24)
         }}
         onClick={this.onMarkerClick}
         position={{lat: fire.latitude, lng: fire.longitude }}
@@ -105,8 +105,8 @@ export class CurrentFires extends Component {
           minZoom={3.4}
           maxZoom={14}
         >
-        <Marker
-             position={this.state.currentLocation}
+          <Marker
+            position={this.state.currentLocation}
 
           />
           {this.props.isLoading ? 
@@ -117,8 +117,11 @@ export class CurrentFires extends Component {
             visible={this.state.showingInfoWindow}>
             <div>
               <h1>{this.state.selectedPlace.name}</h1>
-              <h3>Current Burn: {this.state.selectedPlace.acresBurned}</h3>
-              <h3>Last updated on {this.state.selectedPlace.lastUpdate}</h3>
+              <h3>Current Burn: {this.state.selectedPlace.acresBurned || 'unknown'}</h3> 
+              { this.state.selectedPlace.lastUpdate ?
+                <h3>Last updated on {this.state.selectedPlace.lastUpdate}</h3> :
+                <h3>status: unverified fire</h3>}
+
             </div>
           </InfoWindow>
         </Map>

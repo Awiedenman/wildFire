@@ -21,6 +21,7 @@ export class Home extends Component {
     try {
       const currentFireData = await currentFireRequest();
       const cleanedCurrentFireData = fireDataCleaner(currentFireData);
+      console.log('current fires', cleanedCurrentFireData.length);
       const firesFromDb = await getUnverifiedFires(); 
       this.props.storeCurrentFireData(cleanedCurrentFireData, firesFromDb);
     } catch (error) {
